@@ -1,0 +1,81 @@
+.product-main{
+	overflow: hidden;
+	font-size: 24px;
+	color: #8a8e91;
+}
+.product-cont{
+	background-color: #FFFFFF;
+	margin: 33px 32px 30px 32px;
+	border-radius: 10px;
+	padding: 30px 32px;
+}
+.product-cont img.fl{
+	width: 270px;
+	height: 196px;
+}
+.product-cont div.fr{
+	width: 315px;
+}
+.product-cont h4{
+	font-size: 35px;
+	color: #0099ff;
+	margin-top: 3px;
+	margin-bottom: 70px;
+}
+.product-cont .address-for{
+	padding-bottom: 16px;
+}
+
+.product-item{
+	width: 686px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color: #FFF;
+	border-radius: 10px;
+	
+}
+.product-item .item-title{
+	line-height: 98px;
+	font-size: 32px;
+	color: #080808;
+	background: url(../../img/icon/allChannel.png) no-repeat center;
+	padding-left: 90px;
+	background-position-x: 34px;
+	border-bottom: 1px solid #E7E7E7;
+}
+.product-item ul li{
+	margin: 0 20px;
+	border-bottom: 1px solid #e7e7e7;
+	color: #666666;
+}
+.product-item ul li a{
+	color: #666666;
+	display: block;
+	text-decoration: none;
+}
+.product-item ul li:last-child{
+	border: none;
+}
+.product-item ul li a h4{
+	color: #333333;
+	font-size: 31px;
+	margin-top: 26px;
+	margin-bottom: 20px;
+	
+}
+.product-item ul li a> div.fl span{
+	font-size: 24px;
+	display: inline-block;
+	width: 400px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	margin-bottom: 20px;
+}
+.product-item ul li a > div.fr{
+	font-size: 28px;
+}
+
+.product-item ul li a> div.fr span{
+	color: #ff793b;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/swiper.min.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/mine/index.css" />
+    
+    <script type="text/javascript" src="../../js/resetpage.js"></script>
+
+  </head>
+
+  <body>
+  	
+    <section id="html-section">
+      <div class="wrapper">
+     	<header>
+	      <a class="goBack"></a>
+	      <span>设置</span>
+	    </header>
+       <div class="downUl">
+       	<ul>
+       		<li class="lastLi">
+       			<a href="../login/updatePass.html" class="passIcon">修改密码</a>
+       		</li>
+       	</ul>
+       </div>
+     </div> 
+     <footer>
+        <button class="button-bottom" id="exit">退出</button>
+    </footer>
+    </section>
+    
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/common/tools.js"></script>
+  </body>
+  <script>
+  	$(function(){
+  		$("#exit").click(function(){
+  			sessionStorage.setItem("sessionId",'');
+  			window.location.href= '../index.html'
+  		});
+  	});
+  </script>
+</html>

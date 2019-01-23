@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的订单</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"/>
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/order/returnList.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+</head>
+<body>
+  <div class="tab-panel">
+    <ul class="clearBoth">
+      <li class="active">退货</li>
+      <li>换货</li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div class="pan">
+      <ul class="ul"></ul>
+    </div>
+    <div class="pan1">
+     <ul class="ul1"></ul>
+    </div>
+  </div>
+  <div id="dialogs">
+    <div class="mask-content">
+      <p class="msg"></p>
+      <span class="repay">知道啦</span>
+    </div>
+  </div>
+  <div class="mask">
+    <div class="content">
+      <p class="inform">确认收货吗?</p>
+      <div class="cancel">取消</div>
+      <div class="sure" key="">确定</div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="../../js/common/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../../js/lib/zepto.min.js" ></script>
+<script type="text/javascript" src="../../js/lib/handlebars/handlebars.js"></script>
+<script type="text/javascript" src="../../js/lib/handlebars/handleMethod.js"></script>
+<script type="text/javascript" src="../../js/common/tools.js" ></script>
+<script type="text/javascript" src="../../js/order/returnList.js" ></script>
+<script type="text/javascript" src="../../js/common/tab.js" ></script>
+<script id="item-template" type="text/x-handlebars-template">
+  {{#each rows.productBackList}}
+      <li>
+          <input type="hidden" class="id" value="{{id}}">
+          <div class="order">
+            <span class="orderName">{{orderSn}}</span>
+            {{#if (eq stateReturn '1')}}
+            <span class="orderStatus">未处理</span>
+            {{else if (eq stateReturn '2')}}
+            <span class="orderStatus">审核通过待收货</span>
+            {{else if (eq stateReturn '3')}}
+            <span class="orderStatus">已经收货</span>
+            {{else if (eq stateReturn '4')}}
+            <span class="orderStatus">不予处理</span>
+            {{/if}}
+          </div>
+          <div class="pro">
+            <div class="proLeft fl">
+              <img data-url="{{image}}" class="product_logo"/>
+            </div>
+            <div class="proRight fr">{{productName}}</div>
+          </div>
+          <div class="payWay">
+            <p>退款状态：
+              {{#if (eq stateMoney '1')}}
+                <span class="second_color">未退款</span>
+              {{else if (eq stateMoney '2')}}
+                <span class="second_color">退款到账户</span>
+              {{else if (eq stateMoney '3')}}
+                <span class="second_color">退款到银行</span>
+              {{/if}}
+            </p>
+          </div>
+        </li>
+  {{/each}}
+</script>
+<script id="change-template" type="text/x-handlebars-template">
+  {{#each rows.productBackList}}
+      <li>
+          <input type="hidden" class="id" value="{{id}}">
+          <div class="order">
+            <span class="orderName">{{orderSn}}</span>
+            {{#if (eq state '1')}}
+            <span class="orderStatus">未处理</span>
+            {{else if (eq state '2')}}
+            <span class="orderStatus">审核通过待收货</span>
+            {{else if (eq state '3')}}
+            <span class="orderStatus">已经收货</span>
+            {{else if (eq state '4')}}
+            <span class="orderStatus">发货完成</span>
+            {{else if (eq state '5')}}
+            <span class="orderStatus">原件退还</span>
+            {{else if (eq state '6')}}
+            <span class="orderStatus">不处理</span>
+            {{/if}}
+          </div>
+          <div class="pro">
+            <div class="proLeft fl">
+              <img data-url="{{image}}" class="product_logo"/>
+            </div>
+            <div class="proRight fr">{{productName}}</div>
+          </div>
+        </li>
+  {{/each}}
+</script>
+</html>

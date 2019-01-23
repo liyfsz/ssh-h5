@@ -1,0 +1,76 @@
+.wraper{
+	margin-top: 30px;
+}
+.content_box{
+  width: 686px;
+  height: 394px;
+  margin: 0 32px;
+  padding: 0 20px;
+  border-radius: 14px;
+  background-color: #ffffff;
+  box-shadow: 0px 14px 11.9px 6.1px rgba(219, 219, 219, 0.7);
+}
+.form-group{
+  position: relative;
+  height: 98px;
+  line-height: 98px;
+  border-bottom: 2px solid #e7e7e7;
+}
+.form-group span{
+  font-size: 28px;
+  color: #131313;
+  float: left;
+  width: 130px;
+}
+.form-group div{
+  width: 516px;
+  float: right;
+  height: 100%;
+}
+.form-group div.icon{
+	cursor: pointer;
+	height: 100%;
+}
+.form-group div input{
+  width: 100%;
+  font-size: 28px;
+  color: #c7c7c7;
+  text-align: center;
+  border:none;
+  outline:none;
+  height: 100%;
+}
+input:focus{
+	border:none;
+	outline:none;
+}
+.icon img{
+  position: absolute;
+  right: 5px;
+  top: 32px;
+}
+.last{
+  border-bottom: none !important;
+}
+
+.save{
+	margin-top: 100px;
+}
+
+/*覆盖省市区的样式*/
+.toolbar, .toolbar .title{
+	font-size: 30px;
+}
+.weui-picker-modal .picker-center-highlight{
+	height: 50px;
+}
+.weui-picker-modal .picker-item{
+	height: 50px;
+	line-height: 65px;
+}
+.weui-picker-modal{
+	height: 18rem;
+}
+.weui-picker-modal .picker-modal-inner{
+	height: 15rem;
+}

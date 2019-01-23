@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>商家申请</title>
+    <meta charset="utf-8" />
+    <!--<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />-->
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+     <link rel="stylesheet" href="../../css/common/mobiscroll/mobiscroll_002.css"  type="text/css">
+    <link rel="stylesheet" href="../../css/common/mobiscroll/mobiscroll.css"  type="text/css">
+    <link rel="stylesheet" href="../../css/common/mobiscroll/mobiscroll_003.css"  type="text/css">
+    <link rel="stylesheet" href="../../css/business/apply.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+  </head>
+
+  <body>
+  	<section id="html-section">
+      
+    </section>
+        
+     
+    <div id="dialogs">
+        <div class="mask-content">
+          <p class="msg"></p>
+          <span class="repay">知道啦</span>
+        </div>
+     </div>
+     
+     <div class="mask">
+		  <div class="content">
+		    <p class="inform"></p>
+		    <div class="cancel">重新输入</div>
+		    <div class="sure">使用默认值</div>
+		  </div>
+		</div>
+    <!--隐藏的类数据字典-->
+    <div class="modalBox">
+      <div class="maskBg"></div>
+      <div class="modalCon modalCon1" data-link="relate1">
+        <ul class="businessBig"></ul>
+      </div>
+      <div class="modalCon modalCon2" data-link="relate2">
+        <ul class="businessSmall"></ul>
+      </div>
+      <div class="modalCon modalCon3" data-link="relate3">
+        <ul class="cityList"></ul>
+      </div>
+      <div class="modalCon modalCon4" data-link="relate4">
+        <ul class="addressList"></ul>
+      </div>
+      <div class="modalCon modalCon5" data-link="relate5">
+        <ul class="cityList2"></ul>
+      </div>
+      <div class="modalCon modalCon6" data-link="relate6">
+        <ul class="addressList2"></ul>
+      </div>
+      <div class="modalCon modalCon7" data-link="relate7">
+        <ul class="bankList"></ul>
+      </div>
+      <div class="modalCon modalCon8" data-link="relate8">
+        <ul class="cityList3"></ul>
+      </div>
+      <div class="modalCon modalCon9" data-link="relate9">
+        <ul class="addressList3"></ul>
+      </div>
+      <div class="modalCon modalCon10" data-link="relate10">
+        <ul class="bankList2"></ul>
+      </div>
+    </div>
+    
+    <script src="../../js/common/jquery-1.8.3.min.js"></script>
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    
+    <script type="text/javascript" src="../../js/common/validate.js" ></script>
+    <script src="../../js/common/mobiscroll/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="../../js/common/mobiscroll/mobiscroll_004.js" type="text/javascript"></script>
+    <script src="../../js/common/mobiscroll/mobiscroll.js" type="text/javascript"></script>
+    <script src="../../js/common/mobiscroll/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="../../js/common/mobiscroll/mobiscroll_005.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../js/common/tools.js" ></script>
+    <script type="text/javascript" src="../../js/common/mask.js"></script>
+    <script type="text/javascript" src="../../js/common/validate.js" ></script>
+    
+    <script type="text/javascript" src="../../js/business/applyEdit.js" ></script>
+    <script type="text/javascript" src="../../js/business/apply.js" ></script>
+    
+    <script id="content-template" type="text/x-handlebars-template">
+    	<form class="" id="resourceForm">
+           <input type="hidden" id="sessionId" name="sessionId" />
+           <input type="hidden" name="id" value="{{data.id}}" />
+           <input type="hidden" name="state" value="{{data.state}}" />
+           
+          <div class="content">
+            <div class="form-group">
+              <label><em class="red">*</em>公司名称</label>
+              <div>
+                <input type="text" id="company" value="{{data.company}}" name="company" placeholder="请输入" onkeyup="document.getElementById('bankUser').value=this.value" onblur="document.getElementById('bankUser').value=this.value"/>
+              </div>
+            </div>
+            <div class="form-group">
+             <label>公司所在地</label>
+             <div class="newCity">
+              <span class="mytogRelate relate3" data-con="modalCon3">{{data.companyProvinceName}}</span>
+              <input class="required province"  type="hidden"  value="" id="" />
+              <input class="required province"  name="companyProvince" type="hidden" value="{{data.companyProvince}}"/>
+             </div>
+             <div class="newCity">
+              <span class="mytogRelate relate4" data-con="modalCon4">{{data.companyCityName}}</span>
+              <input class="required province"  type="hidden"  value="" id=""/>
+              <input class="required province"  name="companyCity" type="hidden" value="{{data.companyCity}}"/>
+             </div>
+           </div>
+            <div class="form-group">
+              <label>公司详细地址</label>
+              <div>
+                <input type="text" id="companyAdd" value="{{data.companyAdd}}" name="companyAdd" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>公司电话</label>
+              <div>
+                <input  type="tel" id="telephone" value="{{data.telephone}}" name="telephone" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>公司法人</label>
+              <div>
+                <input type="text" id="legalPerson" value="{{data.legalPerson}}" name="legalPerson" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>公司法人手机号</label>
+              <div>
+                <input type="tel" id="personPhone" value="{{data.personPhone}}" name="personPhone" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>邮箱</label>
+              <div>
+                <input type="text" id="email" value="{{data.email}}" name="email" placeholder="请输入" />
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="form-group">
+              <label>行业大类</label>
+              <span class="togRelate relate1 copyNextInput bigIndustrySpan" data-con="modalCon1">{{data.bigIndustryCa}}</span>
+              <input class="bigIndustryCa" id="" value="{{data.bigIndustryCa}}" name="bigIndustryCa" type="hidden"  />
+              <input class="bigIndustry" id="" value="{{data.bigIndustry}}" name="bigIndustry" type="hidden" />
+            </div>
+            <div class="form-group">
+              <label>行业小类</label>
+              <span class="bigTogRelate relate2 copyNextInput" data-con="modalCon2">{{data.smallIndustryCa}}</span>
+              <input class="required" id="" value="{{data.smallIndustryCa}}" name="smallIndustryCa" type="hidden" />
+              <input class="required" id="" value="{{data.smallIndustry}}" name="smallIndustry" type="hidden" />
+            </div>
+            <div class="form-group">
+              <label>成立时间</label>
+              <div>
+                <input value="{{data.foundingTime}}" type="text" id="foundingTime" name="foundingTime" placeholder="请选择" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>经营范围</label>
+              <div>
+                <input  value="{{data.businessScope}}" type="text" id="businessScope" name="businessScope" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>场地面积</label>
+              <div>
+                <input class="unique" type="text" id="siteArea" name="siteArea" placeholder="请输入" value="{{data.siteArea}}"/>
+                <span class="info">㎡</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>年业务量</label>
+              <div>
+                <input class="unique" value="{{data.traffic}}"  type="text" id="traffic" name="traffic" placeholder="请输入" />
+                <span class="info">万元</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>推荐人手机号</label>
+              <div>
+                <input value="{{data.sellPhone}}"  type="tel" id="sellPhone" name="sellPhone" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>法人身份证号</label>
+              <div>
+                <input value="{{data.legalPersonCard}}"  type="text" id="legalPersonCard" name="legalPersonCard" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>组织机构代码证</label>
+              <div>
+                <input value="{{data.bussinessLicense}}" type="text" id="bussinessLicense" name="bussinessLicense" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+            	<label>对公对私</label>
+              <label for="have" class='radio_label {{#if (eq data.userTyp "1")}}checked{{/if}}'>
+                <input type="radio" value="1" id="have" name="userTyp" {{#if (eq data.userTyp "1")}}checked="checked"{{/if}}/>对私
+              </label>
+              <label for="no" class='radio_label {{#if (eq data.userTyp "2")}}checked{{/if}}'>
+                <input type="radio" value="2" id="no" name="userTyp" {{#if (eq data.userTyp "2")}}checked="checked"{{/if}}/>对公
+              </label>
+            </div>
+          </div>
+          
+          <p class="bankInfo">对公</p>
+          <div class="content">
+            <div class="form-group">
+             <label><em  class="red">*</em>开户行地址</label>
+             <div class="newCity">
+              <span class="mytogRelate2 relate5 copyNextInput" data-con="modalCon5">{{data.bankProvinceName}}</span>
+              <input class="required province2"  type="hidden"  value="{{data.bankProvinceName}}" id="" name="bankProvinceName"/>
+              <input class="required province2"  name="bankProvince" type="hidden" value="{{data.bankProvince}}"/>
+             </div>
+             <div class="newCity">
+              <span class="mytogRelate2 relate6 copyNextInput" data-con="modalCon6">{{data.bankCityName}}</span>
+              <input class="required province2"  type="hidden"  value="" id="" name="bankCityName"/>
+              <input class="required province2"  name="bankCity" type="hidden" value="{{data.bankCity}}"/>
+             </div>
+           </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>开户行账号名称</label>
+              <div>
+                <input class="required" value="{{data.bankUser}}" type="text" id="bankUser" name="bankUser" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>开户行</label>
+              <div>
+                <span class="togRelate relate7 copyNextInput" data-con="modalCon7">{{data.bankNameCa}}</span>
+                <input class="required" id="" value="" type="hidden" name="bankNameCa"/>
+                <input class="required" id="" value="{{data.bankName}}" name="bankName" type="hidden" />
+              </div>
+            </div>
+            
+            <div class="form-group relateBank {{#if (eq data.bankName "18")}}show{{/if}}">
+              <div>
+                <input class="required" type="text" name="bankNameByUser" placeholder="请输入开户行" value="{{data.bankNameByUser}}"/>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label><em  class="red">*</em>开户行支行名称</label>
+              <div>
+                <input type="text" placeholder="请输入" class="form-control" only="" name="bankNameBranch" id="bankNameBranch" value="{{data.bankNameBranch}}"/>
+              </div>
+              <div class="search">
+                <ul class="searchList"></ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <label><em  class="red">*</em>银行账号</label>
+              <div>
+                <input  type="text" id="bankCode" name="bankCode" placeholder="请输入" value="{{data.bankCode}}"/>
+              </div>
+            </div>
+          </div>
+          <p class="bankInfo">对私（对私账号必须是法人银行账号）</p>
+          <div class="content">
+            <div class="form-group">
+             <label>开户行地址</label>
+             <div class="newCity">
+              <span class="mytogRelate3 relate8 copyNextInput" data-con="modalCon8">{{data.bankProvinceNamePr}}</span>
+              <input class="required province3"  type="hidden"  value="" id="" name="bankProvinceNamePr"/>
+              <input class="required province3"  name="bankProvincePr" type="hidden" value="{{data.bankProvincePr}}"/>
+             </div>
+             <div class="newCity">
+              <span class="mytogRelate3 relate9 copyNextInput" data-con="modalCon9">{{data.bankCityNamePr}}</span>
+              <input class="required province3"  type="hidden"  value="" id="" name="bankCityNamePr"/>
+              <input class="required province3"  name="bankCityPr" type="hidden" value="{{data.bankCityPr}}"/>
+             </div>
+           </div>
+            <div class="form-group">
+              <label>开户行账号名称</label>
+              <div>
+                <input class="required" value="{{data.bankUserPr}}" type="text" id="bankUserPr" name="bankUserPr" placeholder="请输入" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>开户行</label>
+              <div>
+                <span class="togRelate relate10 copyNextInput" data-con="modalCon10">{{data.bankNameCaPr}}</span>
+                <input class="required" id=""  type="hidden" name="bankNameCaPr"/>
+                <input class="required" id="" value="{{data.bankNamePr}}" name="bankNamePr" type="hidden" />
+              </div>
+            </div>
+            
+            <div class="form-group relateBank {{#if (eq data.bankNamePr "18")}}show{{/if}}">
+              <div>
+                <input class="required" type="text" name="bankNamePrByUser" placeholder="请输入开户行" value="{{data.bankNamePrByUser}}"/>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>开户行支行名称</label>
+              <div>
+                <input type="text" placeholder="请输入" class="form-control" only="" name="bankNameBranchPr" id="bankNameBranchPr" value="{{data.bankNameBranchPr}}"/>
+              </div>
+              <div class="search">
+                <ul class="searchList"></ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>银行账号</label>
+              <div>
+                <input  value="{{data.bankCodePr}}" type="text" id="bankCodePr" name="bankCodePr" placeholder="请输入" />
+              </div>
+            </div>
+            
+            {{#if (eq data.state 6)}}
+            <div class="form-group">
+              <label><em  class="red"></em>意见</label>
+              <div class="red">
+                {{data.qcState}}
+              </div>
+            </div>
+            {{/if}}
+          </div>
+          {{#if (judgeState data.state)}}
+          <div>
+          	<button class="button-bottom" id="updateInfor" type="button">保存</button>
+          </div>
+          {{/if}}
+          
+        </form>
+
+        
+    </script>
+  </body>
+
+</html>

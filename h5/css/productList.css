@@ -1,0 +1,87 @@
+.loanProductUl{
+  height: -moz-calc(100% - 100px); 
+  height: -webkit-calc(100% - 100px); 
+  height: calc(100% - 100px);
+  overflow: auto;
+
+}
+.loanProductUl li{
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.loanProductUl li h6{
+  margin-left: 20px;
+  font-size: 30px;
+  border-bottom: 1px solid #BBBBBB;
+  line-height: 60px;
+  color: #999;
+}
+.loanProductUl li h6 img{
+  width: 40px;
+  height: 40px;
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.loanProductUl li .detailBox{
+  padding-left: 20px;
+}
+
+.loanProductUl li .detailBox dl,
+.loanProductUl li .detailBox a{
+  display: inline-block;
+  vertical-align: middle;
+}
+.loanProductUl li .detailBox dl {
+  color: #aaa;
+  font-size: 25px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  width: 30%;
+}
+.loanProductUl li .detailBox dl + dl{
+  margin-left: 20px;
+  width: 45%;
+}
+.loanProductUl li .detailBox dl dt{
+  padding-bottom: 10px;
+  color: #666;
+  font-size: 40px;
+}
+.loanProductUl li .detailBox dl:first-child dt{
+  color: #FF9900;
+}
+.loanProductUl li .detailBox dl:first-child dt small{
+  font-size: 20px;
+}
+
+.loanProductUl li .detailBox a{
+  text-decoration: none;
+  color: #FF9900;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 1px solid #ecbc93;
+  border-radius: 5px;
+}
+
+.bott-button{
+  border: 1px solid #BBBBBB;
+  background: #FFFFFF;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.bott-button a{
+  display: inline-block;
+  width: 49%;
+  border-right: 1px solid #BBBBBB;
+  text-align: center;
+  line-height: 100px;
+  font-size: 40px;
+  color: #FF9900;
+  text-decoration: none;
+  
+}
+.bott-button a:last-child{
+  border: none;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>个人中心</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="{{path.app}}/css/common/reset.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/common/app.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/common/form.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="{{path.app}}/js/common/resetpage.js" ></script>
+  </head>
+
+  <body class="bgffffff">
+  	<header>
+    <a href="javascript:;" class="goBack"></a>
+    <span>个人中心</span>
+</header>
+    <div class="formSec">
+      <div class="formDiv"></div>
+      <footer class="noBlock">
+			<ul class="clearBoth">
+				<li><a href="../index.html">借款</a></li>
+				<li><a href="../integralMall/index.html">发现</a></li>
+				<li><a href="../credit/creditList.html">信用</a></li>
+				<li class="active"><a href="../mine/myAccount.html">我的</a></li>
+			</ul>
+		  </footer>
+    </div>
+    
+    
+    <!--弹出框1-->
+		<div class="dialog_alert" id="dialog">
+			<div class="mask"></div>
+			<div class="dialog">
+				<div class="dialog_hd"><strong class="dialog_title">提示</strong></div>
+				<div class="dialog_bd">
+					提示信息
+				</div>
+				<div class="dialog_ft clearBoth">
+					<a href="javascript:;"  class="btn_dialog cancelBtn one">知道了</a>
+				</div>
+			</div>
+		</div>
+		
+    <script src="{{path.app}}/js/lib/jquery-1.10.1.min.js"></script>
+    <script src="{{path.app}}/js/lib/jquery.cookie.js"></script>
+    <script src="{{path.app}}/js/common/app.js"></script>
+    <script src="{{path.app}}/js/lib/handlebars/handlebars.js"></script>
+    <script src="{{path.app}}/js/personalInfor/perCenter.js"></script>
+    <script src="{{path.app}}/js/lib/handlebars/handleMethod.js"></script>
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="form-template" type="text/x-handlebars-template">
+    {{{{raw}}}}
+    <form action="" class="formBox" id="messForm">
+        <div class="form-group">
+          <a href="idCard.html" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/iconidcard.png"/>
+            {{{{raw}}}}
+            <label>身份证</label>
+            {{#if (eq idCardStatus 'Y')}}
+            <em>已绑定</em>
+            {{else}}
+            <em class="unbind">未绑定</em>
+            {{/if}}
+          </a>
+        </div>
+        <div class="form-group">
+          <a href="person.html" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/iconpersonl.png"/>
+            {{{{raw}}}}
+            <label>个人信息</label>
+            {{#if (eq personStatus 'Y')}}
+            <em>已绑定</em>
+            {{else}}
+            <em class="unbind">未绑定</em>
+            {{/if}}
+          </a>
+        </div>
+        <div class="form-group">
+          <a href="work.html" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/iconwork.png"/>
+            {{{{raw}}}}
+            <label>工作信息</label>
+            {{#if (eq jobStatus 'Y')}}
+            <em>已绑定</em>
+            {{else}}
+            <em class="unbind">未绑定</em>
+            {{/if}}
+          </a>
+        </div>
+        <div class="form-group">
+          <a href="contacts.html" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/iconcontact.png"/>
+            {{{{raw}}}}
+            <label>联系人</label>
+            {{#if (eq linkmanStatus 'Y')}}
+            <em>已绑定</em>
+            {{else}}
+            <em class="unbind">未绑定</em>
+            {{/if}}
+          </a>
+        </div>
+        <div class="form-group noBorBot">
+          <a href="bankCard.html" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/iconBank.png"/>
+            {{{{raw}}}}
+            <label>银行卡</label>
+            {{#if (eq bankStatus 'Y')}}
+            <em>已绑定</em>
+            {{else}}
+            <em class="unbind">未绑定</em>
+            {{/if}}
+          </a>
+        </div>
+        <!--<div class="sepLine"></div>
+        <div class="form-group">
+          <a href="tel:400-6139-360" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/icontel.png"/>
+            {{{{raw}}}}
+            <label>客服电话</label>
+            <em>400-6139-360</em>
+          </a>
+        </div>
+        <div class="form-group wholeWidth">
+          <div class="contWid">
+            <a href="/personLoan/loanRecord.html" class="bgLeftArrow">
+            {{{{/raw}}}}
+            <img src="{{path.app}}/img/personal/iconLoan.png"/>
+            {{{{raw}}}}
+            <label>借款记录</label>
+          </a>
+          </div>
+          
+        </div>-->
+        
+      </form>
+    {{{{/raw}}}}
+  </script>
+</html>

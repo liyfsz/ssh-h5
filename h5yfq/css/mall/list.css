@@ -1,0 +1,58 @@
+header input{
+	width: 90%;
+}
+
+.goodsList .tabSelect{
+	display: flex;
+	display: -webkit-flex;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #E1E1E1;
+}
+.goodsList .tabSelect li{
+	flex: 1;
+	-webkit-flex: 1;
+	text-align: center;
+	line-height: 80px;
+	background: url(../../img/icon/initUpDown.png) no-repeat center;
+	background-position-x: 165px;
+	cursor: pointer;
+}
+.goodsList .tabSelect li.upSort{
+	background: url(../../img/icon/up.png) no-repeat center;
+	background-position-x: 165px;
+	color: #FF9900;
+}
+.goodsList .tabSelect li.downSort{
+	background: url(../../img/icon/down.png) no-repeat center;
+	background-position-x: 165px;
+	color: #FF9900;
+}
+.goodsList .tabSelect li.downOnly{
+	background: url(../../img/icon/comDown.png) no-repeat center;
+	background-position-x: 165px;
+	color: #FF9900;
+}
+.goodsList .goodsItems li{
+	padding: 30px;
+	border-bottom: 1px solid #E1E1E1;
+}
+.goodsList .goodsItems a{
+	display: block;
+	color: #999;
+}
+.goodsList .goodsItems a > img{
+	width: 30%;
+	float: left;
+}
+.goodsList .goodsItems a > div{
+	width: 65%;
+	float: right;
+}
+.goodsList .goodsItems a > div > h6{
+	font-size: 28px;
+	color: #000;
+	margin-bottom: 15px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}

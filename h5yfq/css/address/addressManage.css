@@ -1,0 +1,83 @@
+body{
+  background:#F7F7F7;
+height:95%;
+}
+.wrapper{
+  height:95%;
+  position:relative;
+}
+.list{
+  height: calc(95% - 100px);
+  height: -moz-calc(95% - 100px);
+  height: -webkit-calc(95% - 100px);
+  overflow: auto;
+}
+li{
+  background: #fff;
+  margin-bottom: 20px;
+}
+.perInfo{
+  padding: 0 30px;
+  height: 104px;
+  line-height: 104px;
+}
+.name{
+  font-size: 32px;
+  color: #666;
+  padding-right: 45px;
+}
+.phone{
+  font-size: 32px;
+  color: #606060;
+}
+.address{
+  padding: 0 30px;
+  font-size: 26px;
+  color: #929292;
+  line-height: 52px;
+}
+.operation{
+  margin-top: 20px;
+  padding: 0 30px;
+  height: 71px;
+  line-height: 71px;
+  border-top:1px solid #e1e1e1
+}
+.operation em{
+	cursor: pointer;
+}
+
+.state2{
+  background: url('../../img/imgs/undefault.png') no-repeat left;
+  padding-left: 70px;
+  font-size: 28px;
+  color: #606060;
+  float: left;
+}
+
+.state1{
+  background: url('../../img/imgs/default.png') no-repeat left;
+  padding-left: 70px;
+  font-size: 28px;
+  color: #606060;
+  float: left;
+}
+
+.edit{
+  float: right;
+  background: url('../../img/imgs/edit.png') no-repeat left;
+  font-size: 24px;
+  color: #acacac;
+  padding-left: 42px;
+  margin-right: 52px;
+  cursor: pointer;
+}
+.delete{
+  float: right;
+  background: url('../../img/imgs/delete.png') no-repeat left;
+  font-size: 24px;
+  color: #acacac;
+  padding-left: 42px;
+  cursor: pointer;
+}
+

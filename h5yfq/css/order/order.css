@@ -1,0 +1,199 @@
+/*adress one item*/
+ul.address-list li a{
+	background: url(../../img/icon/insureAdress.png) no-repeat;
+	background-color: #FFFFFF;
+	background-position-x: 30px;
+	background-position-y: 93px;
+	margin-bottom: 20px;
+	display: block;
+	text-decoration: none;
+}
+ul.address-list li > a > span{
+	font-size: 32px;
+	color: #606060;
+	font-weight: bold;
+	padding: 0px 44px 0px 80px;
+	line-height: 90px;
+}
+ul.address-list li > a > span+span{
+	padding-left: 0px;
+}
+
+ul.address-list li p{
+	font-size: 26px;
+	color: #929292;
+	line-height: 50px;
+	padding: 0px 39px 30px 80px;
+}
+
+.orderDetail{
+	background-color: #FFFFFF;
+}
+
+.orderDetail > div > img{
+	margin: 20px 0px 20px 20px;
+	width: 194px;
+	height: 194px;
+}
+
+.orderDetail div.fr{
+	width: 500px;
+}
+.orderDetail h4{
+	margin-top: 45px;
+	font-size: 25px;
+	color: #414141;
+	margin-right: 50px;
+}
+
+.orderDetail > div label,.orderDetail > div span{
+	display: block;
+	margin: 17px 0px 0px 0px;
+	color: #ababab;
+}
+.orderDetail dl{
+	padding: 0px 30px;
+	line-height: 98px;
+	color: #606060;
+	border-bottom: 1px solid #E1E1E1;
+}
+.orderDetail dl:after{
+	clear: both;
+	content: "";
+	overflow: hidden;
+	height: 0;
+	width: 0;
+	display: block;
+}
+
+.orderDetail dl dt{
+	float: left;
+	font-size: 28px;
+}
+.orderDetail dl dd{
+	float: right;
+	font-size: 30px;
+}
+
+.orderDetail dl dd span{
+	position: relative;
+	padding-right: 20px;
+}
+.orderDetail dl dd span:last-child{
+	padding-right: 0px;
+}
+
+.orderDetail dl dt img{
+	vertical-align: middle;
+}
+.orderDetail dl:not(.couponList) input[type="radio"] + label::before {
+    content: "\a0"; /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #E1E1E1;
+    padding: 9px;
+}
+/*抵息券选中样式*/
+
+.orderDetail dl.couponList input[type="radio"] + label{
+	  padding: 5px 15px;
+	  border: 1px solid #E1E1E1;
+	  font-size: 20px;
+	  position: relative;
+	  margin: 0px 10px;
+}
+.orderDetail dl.couponList input[type="radio"] + label i{
+	position: absolute;
+	right: -10px;
+	top: -50px;
+}
+.orderDetail dl.couponList input[type="radio"]:checked + label{
+	  background-color: #ffbc00;
+	  color: #FFFFFF;
+}
+.orderDetail dl.couponList input[type="radio"]:checked + label i{
+	  color: #F29B2F;
+}
+/*抵息券选中样式结束*/
+.orderDetail dl:not(.couponList) input[type="radio"]:checked + label::before {
+    background-color: #ffbc00;
+    background-clip: content-box;
+}
+.orderDetail dl input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.order-opera{
+	text-align: right;
+}
+.order-opera a{
+	display: inline-block;
+	padding: 13px 48px;
+	border: 1px solid #a6a6a6;
+	color: #a6a6a6;
+	border-radius: 27px;
+	background-color: #FFFFFF;
+	font-size: 28px;
+	margin:28px 17px;
+	text-decoration: none;
+	
+}
+.order-opera a.btn-color{
+	border-color: #ffbc00;
+	color: #ffbc00;
+}
+.order-opera a.btn-bgColor{
+	border-color: #ffbc00;
+	color: #fff;
+	background: #ffbc00;
+}
+.good-Status,.goods-trail{
+	line-height: 98px;
+}
+.good-Status dt,.goods-trail dt{
+	float: left;
+	padding-left: 36px;
+}
+.good-Status{
+	color: #392d2a;
+}
+.goods-trail{
+	color: #606060;
+	margin-bottom: 20px;
+}
+.good-Status dt img,.goods-trail dt img{
+	vertical-align: middle;
+	margin-right: 24px;
+}
+.good-Status dd,.goods-trail dd{
+	float: right;
+	padding-right: 30px;
+}
+
+.goods-trail dd{
+	padding-right: 80px;
+}
+.trail-link{
+	display: block;
+	background: url(../../img/imgs/rarrow.png) no-repeat;
+	background-position: center;
+	background-position-x: 700px;
+	background-size: 17px 33px;
+	background-color: #FFFFFF;
+}
+
+
+.defaultIcon{
+	background: url(../../img/icon/insureAdress.png) no-repeat center left;
+	background-color: #FFFFFF;
+	display: block;
+	text-decoration: none;
+	color: #999999;
+	line-height: 100px;
+	padding-left: 70px;
+	background-position-x: 30px;
+}

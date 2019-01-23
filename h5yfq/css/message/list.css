@@ -1,0 +1,37 @@
+.downUl{
+	padding: 0px 30px;
+	background: #FFFFFF;
+}
+.downUl ul li a{
+	border-bottom: 1px solid #E1E1E1;
+	color: #999999;
+	padding-bottom: 20px;
+	display: block;
+}
+.downUl ul li a > div{
+	padding: 20px 0px;
+}
+.downUl ul li h6{
+	color: #000000;
+}
+.downUl ul li h5{
+	padding: 0px 15px;
+	text-decoration: underline;
+	text-align: right;
+}
+.downUl ul li a p{
+	padding: 30px 0px;
+}
+
+.messCont{
+	padding: 0px 30px;
+	color: #999999;
+}
+.messCont h6{
+	padding: 30px 0px;
+	color: #000000;
+}
+.messCont p{
+	padding-bottom: 30px;
+	font-size: 26px;
+}

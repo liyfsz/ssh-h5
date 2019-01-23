@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>上传图片</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/business/apply.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+  </head>
+
+  <body>
+        <form class="formBox" id="resourceForm" enctype="multipart/form-data">
+          <input type="hidden" id="sessionId" name="sessionId"  value=""/>
+          <div class="content">
+            <p class="pic-type">营业执照扫描件</p>
+            <ul class="list">
+              <li>
+                <div class="pic-group">
+                  <div class="picDiv">
+                    <input type="file" class="uploadPic1"  id="up_bussinessLicenseImage"/>
+                    <input type="hidden" name="up_bussinessLicenseImage" id="bussinessLicenseImage"/>
+                    <span class="rigFace"><img src="../../img/imgs/tianjia.png"/></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <p class="pic-type">场地租赁合同</p>
+            <ul class="list">
+              <li>
+                <div class="pic-group">
+                  <div class="picDiv">
+                    <input type="file" class="uploadPic2"  id="up_htImage"/>
+                    <input type="hidden" name="up_htImage" id="htImage"/>
+                    <span class="rigFace"><img src="../../img/imgs/tianjia.png"/></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <p class="pic-type">场地照片</p>
+            <ul class="list">
+              <li>
+                <div class="pic-group">
+                  <div class="picDiv">
+                    <input type="file" class="uploadPic3"  id="up_cdImage"/>
+                    <input type="hidden" name="up_cdImage" id="cdImage"/>
+                    <span class="rigFace"><img src="../../img/imgs/tianjia.png"/></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+           <div class="content">
+            <p class="pic-type">身份证正面</p>
+            <ul class="list">
+              <li>
+                <div class="pic-group">
+                  <div class="picDiv">
+                    <input type="file" class="uploadPic4"  id="up_personCardUp"/>
+                    <input type="hidden" name="up_personCardUp" id="personCardUp"/>
+                    <span class="rigFace"><img src="../../img/imgs/tianjia.png"/></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <p class="pic-type">身份证背面</p>
+            <ul class="list">
+              <li>
+                <div class="pic-group">
+                  <div class="picDiv">
+                    <input type="file" class="uploadPic5"  id="up_personCardDown"/>
+                    <input type="hidden" name="up_personCardDown" id="personCardDown"/>
+                    <span class="rigFace"><img src="../../img/imgs/tianjia.png"/></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </form>
+    <button class="btn">提交</button>
+      <div id="dialogs">
+        <div class="mask-content">
+          <p class="msg"></p>
+          <span class="repay">知道啦</span>
+        </div>
+     </div>
+    <script src="../../js/common/jquery-1.8.3.min.js"></script>
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/common/mobileBUGFix.mini.js"></script>
+    <script type="text/javascript" src="../../js/common/MegaPixImage.js"></script>
+    <script type="text/javascript" src="../../js/business/busLicense.js"></script>
+    <script type="text/javascript" src="../../js/business/yingye.js"></script>
+    <script type="text/javascript" src="../../js/business/zulin.js"></script>
+    <script type="text/javascript" src="../../js/business/changdiphoto.js"></script>
+    <script type="text/javascript" src="../../js/business/fanmian.js"></script>
+    <script type="text/javascript" src="../../js/business/zhengmian.js"></script>
+    
+  </body>
+
+</html>

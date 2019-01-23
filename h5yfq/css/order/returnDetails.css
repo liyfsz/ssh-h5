@@ -1,0 +1,88 @@
+.pro{
+  height:200px;
+  width:750px;
+  padding:5px 25px 5px 30px;
+  border-bottom:1px solid #e1e1e1;
+  background: #fff url(../../img/icon/comDown.png) no-repeat 660px 180px;
+}
+.proLeft{
+  width: 190px;
+  height: 190px;
+  overflow:hidden;
+}
+.proRight{
+  width:483px;
+  padding-top:30px;
+  font-size:25px;
+  line-height:45px;
+  color:#414141;
+}
+.returnInfo{
+  margin-top:50px;
+  color: #acacac;
+  font-size: 26px;
+}
+.returnTime span{
+  padding-left: 20px;
+}
+.chooseOption{
+  color: #ffbc00;
+}
+.returnForm{
+  width: 750px;
+  padding: 0 50px;
+  height: 400px;
+  margin: auto;
+  background: #fff;
+}
+.form-group{
+  width: 650px;
+}
+.form-group label {
+  font-size: 28px;
+  color: #131313;
+  float: left;
+  width: 180px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 96px;
+}
+textarea{
+  border: 1px solid #ddd;
+  width: 400px;
+  height: 175px;
+  padding: 10px;
+  font-size: 26px;
+}
+/*新增单选按钮样式*/
+ .radio_label{
+    background: url(../../img/imgs/undefault.png) no-repeat left center;
+    display: inline-block !important;
+    width:134px !important;
+    height:96px !important;
+    line-height: 96px !important;
+    text-indent:30px;
+    padding-left: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .checked {
+    background: url(../../img/imgs/default.png) no-repeat left center;
+  }
+  
+  input[type='radio'] {
+    display:none;
+  }
+.btn{
+  width: 100px;
+  height: 60px;
+  color: #fff;
+  background: #ffbc00;
+  font-size: 26px;
+  margin-left:275px;
+  margin-top: 30px;
+  display: block;
+  line-height: 60px;
+  text-align: center;
+}

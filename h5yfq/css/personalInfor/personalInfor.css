@@ -1,0 +1,461 @@
+/*身份证图片*/
+.formSec div.form-group .picDiv{
+  position: relative;
+  height: 232px;
+  display: table;
+  line-height: 232px;
+}
+
+.formSec div.form-group .picDiv input[type=file]{
+  opacity: 0;
+  width: 307px;
+  height: 200px;
+  position: absolute;
+  z-index: 1;
+  left: 236px;
+}
+
+.formSec div.form-group .picDiv span.rigFace{
+  display: table-cell;
+  width: 370px;
+  height: 230px;
+  background: url(../../img/personal/idRight.png) no-repeat;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 0px;
+  background-size: cover;
+}
+
+.formSec div.form-group .picDiv span.backFace{
+  display: table-cell;
+  width: 370px;
+  height: 232px;
+  background: url(../../img/personal/idOpposite.png) no-repeat;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 0px;
+  background-size: cover;
+}
+.formSec div.form-group .inputLine input{
+  border: none !important;
+  border-bottom: 1px solid #dddcdc !important;
+  font-size: 20px;
+  vertical-align: middle;
+  width: 170px;
+}
+
+.formSec div.form-group .inputLine input:focus{
+  border-bottom: 1px solid #dddcdc !important;
+}
+
+.formSec div.form-group .inputLine em{
+  padding: 0px 25px;
+}
+button{
+  border: none;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  background-color: #FFFFFF;
+}
+.btnDiv{
+  text-align: center;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 60px;
+  
+}
+
+/*电话样式单独*/
+.formSec div.form-group.wholeWidth{
+  width: 750px;
+}
+.formSec div.form-group.wholeWidth > label{
+  padding-left: 50px;
+}
+.formSec div.form-group.wholeWidth > em{
+  padding-right: 30px;
+}
+.formSec div.form-group.wholeWidth > .contWid{
+  width: 690px;
+  margin: 0 auto;
+}
+.formSec div.form-group.wholeWidth label.phoneWid{
+  width: 180px;
+}
+
+.formSec div.form-group.wholeWidth .phoneOuter input,.formSec div.form-group.wholeWidth .phoneOuter input:focus{
+  border: 0px;
+  border-bottom: 1px solid #DDDDDD !important;
+  font-size: 30px;
+  width: auto;
+  max-width: 116px;
+  min-width: 60px;
+  text-align: center;
+  color: #BBBBBB;
+}
+.formSec div.form-group.wholeWidth .phoneOuter em{
+  padding: 0px 15px;
+}
+
+/*个人中心*/
+.bgLeftArrow{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background: url(../../img/personal/iconright.png) no-repeat;
+  background-position: center right;
+  text-decoration: none;
+  background-size: 12px 23px;
+  color: #676767;
+}
+.bgLeftArrow img{
+  vertical-align: middle;
+}
+.bgLeftArrow em{
+  padding-right: 73px;
+  color:  #BBBBBB;
+  float: right;
+}
+.bgLeftArrow em.unbind{
+  color: #0099ff;
+}
+.normalBtn{
+  margin-top: 170px;
+  margin-bottom: 20px;
+}
+.normalBtn button{
+  border: 1px solid #ff6959;
+  color: #FFFFFF;
+}
+
+/*置地的按钮*/
+.bottDiv{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  border-top: 2px solid #DDDCDC;
+  background-color: #FFFFFF;
+}
+.bottDiv a{
+  display: block;
+  width: 49.9%;
+  line-height: 100px;
+  float: left;
+  border-right:1px solid #DDDCDC;
+  font-size: 30px;
+  color: #5a5a5a;
+  text-decoration: none;
+  padding-left: 150px;
+  box-sizing: border-box;
+}
+.bottDiv a.loan{
+  background: url(../../img/personal/loan.png) no-repeat;
+  background-position-y: center;
+  background-position-x: 87px;
+}
+.bottDiv a.loan.current{
+  background: url(../../img/personal/loanHo.png) no-repeat;
+  background-position-y: center;
+  background-position-x: 87px;
+  color: #0099FF;
+}
+.bottDiv a.person{
+  border: none;
+  background: url(../../img/personal/personDe.png) no-repeat;
+  background-position-y: center;
+  background-position-x: 87px;
+}
+.bottDiv a.person.current{
+  background: url(../../img/personal/personHo.png) no-repeat;
+  background-position-y: center;
+  background-position-x: 87px;
+  color: #0099FF;
+}
+.picBox{
+  display: table-cell;
+  width: 340px;
+  height: 232px;
+  border:1px dashed #0099FF;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 0px;
+}
+
+.btnBox{
+  margin-top: 55px;
+}
+
+/*影像排列*/
+.picMar{
+  width: 720px;
+  margin: 0 auto;
+  margin-top: 64px;
+}
+.formSec div.picMar .picItemOut{
+  height: 277px;
+  margin:0px 17px 90px 17px;
+  float: left;
+  width: 326px;
+}
+.formSec div.picMar .picItemOut > img{
+  width: 100%;
+}
+.formSec div.picMar .picItemOut button.removeBtn{
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  background-color: red;
+  font-size: 24px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  padding: 0px;
+  line-height: 32px;
+}
+.formSec div.picMar .picItem{
+  position: relative;
+  height: 206px;
+  width: 313px;
+  text-align: center;
+  display: table;
+  border:3px solid #ffbeb7;
+  border-radius: 15px;
+}
+
+.formSec div.picMar .picItem input[type=file]{
+  opacity: 0;
+  width: 307px;
+  height: 200px;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+}
+.formSec div.picMar .picItem span{
+  display: table-cell;
+  vertical-align: middle;
+}
+.picItem label{
+  position: absolute;
+  top: 242px;
+  width: 100%;
+  font-size: 25px;
+  left: 0px;
+}
+
+/*借款记录*/
+.listTab{
+  font-size: 30px;
+  padding-bottom: 100px;
+}
+
+.listTab table{
+  line-height: 90px;
+  text-align: center;
+  width: 100%;
+  color: #676767;
+  background-color: #FFFFFF;
+}
+.listTab .tabUl li{
+  margin-bottom: 20px;
+  border-bottom: 1px solid #DDDCDC;
+  border-top: 1px solid #DDDCDC;
+}
+.listTab table thead tr td{
+  color: #b4b4b4;
+}
+.listTab.equalThrTab table td{
+  width: 33.33%;
+}
+.listTab table tr td span,.listTab table tr td a{
+  display: block;
+}
+.listTab table tbody{
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+}
+.listTab table tbody tr td span,.listTab table tbody tr td a{
+  border-bottom: 1px solid #DDDCDC;
+}
+.listTab table tbody tr:last-child td span,.listTab table tbody tr:last-child td a{
+  border-bottom: none;
+}
+.listTab table tr td:first-child span,.listTab table tr td:first-child a{
+  margin-left: 30px;
+  width: 222px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.listTab table tr td:last-child span,.listTab table tr td:last-child a{
+  margin-right: 30px;
+}
+.listTab table tbody tr td:last-child span,.listTab table tbody tr td:last-child a{
+  background: url(../../img/personal/iconright.png) no-repeat;
+  background-position: center right;
+}
+.listTab table tbody tr td:last-child span.rotate,.listTab table tbody tr td:last-child a.rotate{
+  background: url(../../img/personal/icondown.png) no-repeat;
+  background-position: center right;
+}
+.listTab table tbody tr td em{
+  padding-right: 20px;
+  color: #B4B4B4;
+}
+.listTab table tbody tr td .timeLabel{
+  float: left;
+  padding-left: 40px;
+}
+.opeBox{
+  font-size: 0px;
+  display: inline-block;
+}
+.opeBox a{
+  border: 1px solid #0099FF;
+  padding: 12px 24px;
+  color: #0099FF;
+  background-color: #FFFFFF;
+  text-decoration: none;
+  font-size: 20px;
+}
+.opeBox a.current{
+  color: #FFFFFF;
+  background-color: #0099FF;
+}
+
+/*toggle*/
+.toggleCon{
+  display: none;
+}
+.toggleShow{
+  display: table-row;
+}
+
+/*图片放大*/
+.shadeImg {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.showImg {
+    width: 400px;
+    height: 500px;
+    margin-top: 140px;
+}
+
+
+
+
+/* 时间控件 start*/
+.dwwr{
+  width: 600px !important;
+}
+.android-ics .dwv {
+  height: 60px;
+  line-height:60px;
+  padding: 0;
+  border-bottom: 2px solid #31b6e7;
+  font-size:40px;
+}
+.android-ics .dwc {
+  width: 600px !important;
+  height:370px !important;
+}
+.dwwc table {
+  width: 550px;
+}
+.android-ics .dwc {
+  padding: 60px 10px 1px 10px;
+}
+
+.dwl {
+  height: 60px;
+  top: -60px;
+  font-size: 26px;
+  line-height: 60px;
+}
+.android-ics .dww .dw-li {
+  font-size: 26px;
+}
+.android-ics  .dw  .dww{
+  height: 300px !important;
+}
+.dw-ul{
+  padding-top: 60px ;
+}
+.android-ics .dw .dwb {
+  height: 70px;
+  line-height: 70px;
+  font-size: 32px;
+}
+.android-ics .dw .dwb-s .dwb {
+  color: #0BB20C;
+}
+.android-ics .dw .dwb-n .dwb {
+  color: #0099FF;
+}
+.dwbc-p .dwbw {
+  width:50%;
+}
+.formSec div.form-group .inputLine input {
+  font-size: 26px;
+  width: 150px !important;
+}
+
+/* 时间控件  end*/
+
+/*上传影像背景图片*/
+.rigPhoto{
+	background: url(../../img/personal/idRight.png) no-repeat;
+}
+.oppoPhoto{
+	background: url(../../img/personal/idOpposite.png) no-repeat;
+}
+.handlePhoto{
+	background: url(../../img/personal/handlePhoto.png) no-repeat;
+}
+.bankPhoto{
+	background: url(../../img/personal/bankPhoto.png) no-repeat;
+}
+
+.toggleTarget{
+	cursor: pointer;
+}
+
+
+
+/*只做展示数据样式0301*/
+.formBox{
+	margin: 30px;
+	background: #FFFFFF;
+}
+.formBox div.form-group{
+	border-bottom: 1px solid #E1E1E1;
+	margin: 0px 20px;
+	display: table;
+	height: 90px;
+}
+.formBox div.form-group:last-child{
+	border-bottom: none;
+}
+.formBox div.form-group > label{
+	display: table-cell;
+	width: 200px;
+	vertical-align: middle;
+}
+.formBox div.form-group > div{
+	display: table-cell;
+	color: #999999;
+	width: 400px;
+	vertical-align: middle;
+}

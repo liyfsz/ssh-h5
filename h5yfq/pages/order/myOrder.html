@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的订单</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"/>
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/order/myOrder.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+</head>
+<body>
+  <div class="tab-panel">
+  	<ul class="clearBoth">
+  		<li class="active">全部</li>
+  		<li>待付款</li>
+  		<li>待发货</li>
+  		<li>已发货</li>
+  		<li>已完成</li>
+  		<li>已取消</li>
+  	</ul>
+  </div>
+  <div class="tab-content">
+    <div class="pan">
+      <ul class="ul"></ul>
+    </div>
+    <div class="pan1">
+     <ul class="ul1"></ul>
+    </div>
+    <div class="pan3">
+    <ul class="ul3"></ul>
+    </div>
+    <div class="pan4">
+     <ul class="ul4"></ul>
+    </div>
+    <div class="pan5">
+    <ul class="ul5"></ul>
+    </div>
+    <div class="pan6">
+     <ul class="ul6"></ul>
+    </div>
+  </div>
+	<div id="dialogs">
+	  <div class="mask-content">
+	    <p class="msg"></p>
+	    <span class="repay">知道啦</span>
+	  </div>
+	</div>
+	
+	<div class="mask">
+	  <div class="content">
+	    <p class="inform">确认收货吗?</p>
+	    <div class="cancel">取消</div>
+	    <div class="sure" key="">确定</div>
+	  </div>
+	</div>
+</body>
+<script type="text/javascript" src="../../js/common/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../../js/lib/zepto.min.js" ></script>
+<script type="text/javascript" src="../../js/lib/handlebars/handlebars.js"></script>
+<script type="text/javascript" src="../../js/lib/handlebars/handleMethod.js"></script>
+<script type="text/javascript" src="../../js/common/tools.js" ></script>
+<script type="text/javascript" src="../../js/order/myOrder.js" ></script>
+<script type="text/javascript" src="../../js/common/tab.js" ></script>
+<script id="item-template" type="text/x-handlebars-template">
+	{{#each myOrderDto.ordersList}}
+	<li>
+		<input type="hidden" class="id" value="{{id}}">
+		<input type="hidden" class="id" value="{{orderProductList.[0].productId}}">
+		<div class="order">
+			<span class="orderName">{{sellerName}}</span>
+			<span class="orderStatus">{{compileState orderState}}</span>
+		</div>
+		<div class="pro">
+			<div class="proLeft fl">
+				<img data-url="{{orderProductList.[0].productLeadLittle}}" class="product_logo"/>
+			</div>
+			<div class="proRight fr">{{orderProductList.[0].productName}}</div>
+		</div>
+		<div class="payWay">
+			{{#if (eq orderState '5')}}
+      <a class="service">退换货</a>
+      {{/if}}
+      <a class="detail">详情</a>
+			<p>付款方式：
+				{{#if periods}}
+				<span>
+					<span class="second_color">{{payMoney}}首付</span> +
+					￥{{periodPayMoney}} x <span class="main-color">{{periods}}期</span></span>
+				{{else}}
+				<span class="main-color">￥{{moneyOrder}}
+				{{/if}}
+			</p>
+		</div>
+		{{#if (eq orderState '4')}}
+		<div class="payWay border-top">
+			<p class="ensureGet" data-id="{{id}}">确认收货</p>
+			<p class="trail" data-id="{{id}}">物流跟踪</p>
+		</div>
+		{{/if}}
+	</li>
+	{{/each}}
+</script>
+</html>

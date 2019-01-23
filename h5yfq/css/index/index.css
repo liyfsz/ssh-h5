@@ -1,0 +1,82 @@
+html{
+  overflow-y: hidden;
+}
+
+.swiper-container {
+  width: 100%;
+  }
+.swiper-wrapper{
+  height: 360px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;display: flex; 
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center; 
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;}
+.swiper-container img{
+  width:100%;
+  height:100%;
+  }
+.scanCode{
+  width: 682px;
+  height: 300px;
+  margin:20px auto;
+}
+.scanCode img{
+  width: 100%;
+  height: 100%;
+}
+.scene{
+  padding:0 30px;
+  width: 750px;
+  margin:0px auto 10px;
+  overflow:hidden;
+}
+.sceneInfo{
+ margin-bottom:20px;
+ border-left:10px solid #ff9900;
+ padding-left: 15px;
+}
+.loanList,.sceneList{
+  width: 714px;
+}
+.sceneList li{
+  float:left;
+  margin-right:24px;
+  height: 160px;
+  width: 214px;
+  margin-bottom:10px;
+}
+.sceneList li img{
+  width:100%;
+  height:100%
+}
+.loanList li{
+  width: 333px;
+  height: 240px;
+  float:left;
+  margin-right:24px;
+  margin-bottom: 10px;
+}
+.loanList img{
+  width: 100%;
+  height: 100%;
+}
+.activiteList{
+  width: 690px;
+  height: 300px;
+}
+.activiteList img{
+  width: 100%;
+  height: 100%;
+}

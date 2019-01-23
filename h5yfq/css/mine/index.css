@@ -1,0 +1,171 @@
+.partUp{
+	height: 570px;
+	width: 100%;
+	background: url(../../img/mine/bg.png) no-repeat center;
+}
+.partUp .more{
+	text-align: right;
+	padding: 30px 30px;
+}
+.partUp .more .messIcon{
+	display: inline-block;
+	width: 42px;
+	height: 42px;
+	text-align: center;
+	border:1px solid #000000;
+	border-radius: 50%;
+	line-height: 30px;
+	position: relative;
+	vertical-align: top;
+	margin-right: 30px;
+}
+.partUp .more .messIcon i{
+	position: absolute;
+	right: -10px;
+	top: -10px;
+	color: #FFFFFF;
+	background: red;
+	border-radius: 50%;
+	display: block;
+	font-style: normal;
+	font-size: 20px;
+	width: 30px;
+	height: 30px;
+}
+.partUp .more .setting{
+	display: inline-block;
+	height: 42px;
+	width: 42px;
+	background: url(../../img/mine/my_title_setting.png) no-repeat center;
+}
+
+.contBox{
+	text-align: center;
+	background: url(../../img/mine/cont_bg.png) no-repeat;
+	height: 416px;
+	width: 686px;
+	background-position-y: 80px;
+	background-position-x: center;
+	margin: 0 auto;
+	margin-top: 45px;
+}
+.tableInfor{
+	display: table;
+	width: 100%;
+	line-height: 40px;
+	margin-top: 20px;
+}
+.tableInfor dl{
+	display: table-cell;
+	position: relative;
+	font-size: 26px;
+}
+
+.tableInfor dl dd:after{
+	content: "";
+	position: absolute;
+	height: 110px;
+	right: 0px;
+	top: 12px;
+	border-left: 1px solid #999;
+}
+.tableInfor dl:last-child dd:after{
+	border: none;
+}
+.tableInfor dl dt,.tableInfor dl dd{
+	line-height: 70px;
+}
+.tableInfor dl dt{
+	color: #999;
+}
+
+
+.downUl{
+	margin: 0 30px;
+	margin-top: 20px;
+}
+.downUl ul li{
+	background: url(../../img/mine/gonext.png) no-repeat center;
+	background-position-x: 620px;
+	background-color: #FFFFFF;
+}
+.downUl a{
+	display: block;
+	color: #000000;
+	line-height: 80px;
+	padding-left: 80px;
+	height: 80px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position-x: 20px;
+	border-bottom: 1px solid #E1E1E1;
+}
+.downUl.noIcon a{
+	padding-left: 10px;
+	margin: 0px 10px;
+}
+.downUl a span{
+	float: right;
+	margin-right: 90px;
+	color: #999999;
+}
+.lastLi{
+	margin-top: 20px;
+}
+.orderIcon{
+	background: url(../../img/mine/order.png);
+}
+.addressIcon{
+	background: url(../../img/mine/address.png);
+}
+.creditIcon{
+	background: url(../../img/mine/credit.png);
+}
+.manaIcon{
+	background: url(../../img/mine/my_shanghu.png);
+}
+.inIcon{
+	background: url(../../img/mine/my_list_shangjia.png);
+}
+.aboutIcon{
+	background: url(../../img/mine/about.png);
+}
+.afterIcon{
+	background: url(../../img/mine/share.png);
+}
+.passIcon{
+	background: url(../../img/mine/setting_list_changepwd.png);
+}
+
+
+/*信用*/
+.creditQuote{
+	color: #FFFFFF;
+	background-color: #F29B2F;
+	text-align: center;
+	padding:50px 0px 50px 0px;
+}
+
+.creditQuote span{
+	font-size: 70px;
+}
+.creditQuote a{
+	display: block;
+	width: 40%;
+	line-height: 60px;
+	color: #FFFFFF;
+	border:1px solid #FFFFFF;
+	border-radius: 50px;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.downUl a.noBaseAuth,.downUl a.noWorkAuth,.downUl a.noContAuth,#zmfText,#mobileText{
+	display: none;
+}
+
+
+p{
+	padding: 30px;
+	line-height: 60px;
+	text-indent: 2em;
+}

@@ -1,0 +1,47 @@
+#leftUl{
+	width: 25%;
+	float: left;
+}
+#rightCont{
+	width: 75%;
+	float: right;
+}
+#leftUl ul li{
+	width: 100%;
+	line-height: 100px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#leftUl ul li.active{
+	background-color: #FFFFFF;
+	border-left: 3px solid #FF9900;
+}
+#rightCont div > img{
+	display: block;
+	margin: 15px auto;
+	height: 200px;
+}
+#rightCont h6{
+	margin: 10px 0px 20px 20px;
+	padding-left: 10px;
+	border-left: 5px solid #ff9900;
+	line-height: 30px;
+}
+#rightCont ul li{
+	width: 32%;
+	text-align: center;
+	display: inline-block;
+}
+#rightCont ul li a{
+	display: block;
+	font-size: 0px;
+}
+#rightCont ul li a >img{
+	width: 160px;
+	height: 160px;
+}
+#rightCont ul li a > span{
+	line-height: 90px;
+	font-size: 26px;
+}

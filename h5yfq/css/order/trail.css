@@ -1,0 +1,73 @@
+*{
+	-moz-text-size-adjust: none
+	-ms-text-size-adjust:none;
+	-webkit-text-size-adjust: none;
+}
+.infor{
+	font-size: 28px;
+	padding: 10px 30px;
+	line-height: 50px;
+}
+.goodsAdress{
+	background: url(../../img/icon/address.png) no-repeat top left;
+	margin-left: 160px;
+	padding-left: 55px;
+	margin-bottom: 50px;
+	margin-top: 30px;
+}
+.progress {
+	margin-top: 20px;
+	padding: 20px 24px;
+	font-size: 28px;
+}
+
+.progress ul.trail-text li{
+	position: relative;
+	color: #a4a4a4;
+}
+.progress ul.trail-text li:last-child span.text{
+	border-left: none;
+}
+.progress ul.trail-text li:first-child{
+	color: #ff9900;
+}
+.progress ul.trail-text i{
+	position: absolute;
+	top: 0px;
+	width: 20px;
+	height: 20px;
+	background-color: #d6d6d6;
+	border-radius: 50%;
+	left: 165px;
+}
+.progress ul.trail-text li:first-child i{
+	border:10px solid #ff9900;
+	left: 155px;
+	background-color: #FFFFFF;
+}
+.progress ul.trail-text li:nth-last-child(1) i,.progress ul.trail-text li:nth-last-child(2) i{
+	border:10px solid #d6d6d6;
+	left: 155px;
+	background-color: #FFFFFF;
+}
+
+
+
+.progress ul.trail-text span:first-child{
+	padding: 0px 30px;
+	display: inline-block;
+	float: left;
+	width: 115px;
+}
+.progress ul.trail-text span.text{
+	padding-left: 44px;
+	width: 470px;
+	word-break: break-all;
+	float: left;
+	border-left: 1px solid #d6d6d6;
+	font-size: 28px;
+}
+.progress ul.trail-text span.text div{
+	padding: 0px 0px 70px 0px;
+	font-size: 26px;
+}

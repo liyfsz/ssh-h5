@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>信用管理</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/swiper.min.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/mine/index.css" />
+    <script type="text/javascript" src="../../js/resetpage.js"></script>
+
+  </head>
+
+  <body>
+  	<header>
+  		<a class="goBack"></a>
+  		<span>信用管理</span>
+  	</header>
+    <section id="html-section">
+      <div class="creditQuote">
+         <div><span id="limit"></span>元</div>
+         <a href="../classify/index.html">立即使用</a>
+      </div> 
+       <div class="downUl noIcon">
+       	<ul>
+       		<li>
+       			<a href="javascript:;" class="noBaseAuth" onclick='showInfo("请激活白条")'>基本信息</a>
+       			<a href="../personalInfor/person.html">基本信息</a>
+       		</li>
+       		<li>
+       			<a href="javascript:;" class="noWorkAuth"  onclick='showInfo("请激活白条")'>工作信息</a>
+       			<a href="../personalInfor/work.html">工作信息</a>
+       		</li>
+       		<li>
+       			<a href="javascript:;" class="noContAuth"  onclick='showInfo("请激活白条")'>紧急联系人</a>
+       			<a href="../personalInfor/contacts.html">紧急联系人</a>
+       		</li>
+       		
+       		<li class="lastLi">
+       			<a href="javascript:;" id="zmfText">芝麻分认证<span>已认证</span></a>
+       			<a href="javascript:;" id="zmxyAuth">芝麻分认证</a>
+       		</li>
+       		<li>
+       			<a href="javascript:;" id="mobileText">运营商认证<span>已认证</span></a>
+       			<a href="javascript:;" id="yysAuth">运营商认证</a>
+       		</li>
+       	</ul>
+       </div>
+    </section>
+    
+    <!--弹出框1-->
+    <div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/credit/index.js"></script>
+    
+  </body>
+
+</html>

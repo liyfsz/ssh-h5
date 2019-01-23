@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>还款计划</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"/>
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/order/orderDetail.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+</head>
+<body>
+	<div class="pro">
+	  <div class="proLeft fl">
+	    <img src="" class="pic" />
+	  </div>
+	  <div class="proRight fr"></div>
+	</div>
+ <section id="html-section"></section>
+ <div id="dialogs">
+  <div class="mask-content">
+    <p class="msg"></p>
+    <span class="repay">知道啦</span>
+  </div>
+ </div>
+</body>
+<script type="text/javascript" src="../../js/common/jquery-1.8.3.min.js" ></script>
+<script type="text/javascript" src="../../js/lib/zepto.min.js" ></script>
+<script src="../../js/lib/handlebars/handlebars.js"></script>
+<script type="text/javascript" src="../../js/common/tools.js" ></script>
+<script type="text/javascript" src="../../js/order/repayPlan.js" ></script>
+
+<script id="content-template" type="text/x-handlebars-template">
+
+<div class="list1">
+  <div class="fl">
+    <span class="sTit">分期本金</span>
+    <span class="sNum">{{findRepayLoanResponse.corpusMoney}}</span>
+  </div>
+  <div class="fl">
+    <span class="sTit">分期服务费</span>
+    <span class="sNum">{{findRepayLoanResponse.serviceCharge}}</span>
+  </div>
+  <div class="fl">
+    <span class="sTit">合计应还</span>
+    <span class="sTotal">{{findRepayLoanResponse.taleCount}}</span>
+  </div>
+</div>
+<div class="list2">
+  <div class="title">
+    <p class="fl">每期还款(元)</p>
+    <p class="fl">当前状态</p>
+    <p class="fl">最后还款日</p>
+  </div>
+  <ul class="payList">
+  	{{#each findRepayLoanResponse.repayLoanList}}
+  	<li>
+  	  <span>{{loanMoney}}</span>
+  	  <span class="payed">{{loanStatus}}</span>
+  	  <span>{{lastLoanDate}}</span>
+  	</li>
+  	{{/each}}
+  </ul>
+</div>
+</script>
+
+</html>

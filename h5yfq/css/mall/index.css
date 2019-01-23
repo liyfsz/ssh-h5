@@ -1,0 +1,68 @@
+.swiper-wrapper{
+  height: 230px;
+}
+
+.goodsType .outBox{
+	padding: 0px 10px;
+}
+.goodsType .outBox li{
+	width: 20%;
+	float: left;
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.goodsType .outBox li a{
+	display: block;
+	text-align: center;
+	font-size: 24px;
+	color: #333333;
+	padding: 18px 0px;
+}
+.goodsType .outBox li img{
+	padding-bottom: 15px;
+	width: 80px;
+	height: 80px;
+}
+
+/*楼层*/
+.floorItem{
+	padding: 0px 30px;
+	margin: 20px 0px;
+}
+
+.floorItem ul li{
+	width: 33%;
+	float: left;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.floorItem a{
+	display: block;
+	text-align: center;
+	box-sizing: border-box;
+}
+.floorItem > a > img{
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.floorItem ul li a img{
+	height: 186px;
+}
+.floorItem ul li a h6{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	width: 98%;
+	height: 40px;
+}
+.floorItem ul li a small{
+	color: #999999;
+}
+.goNext{
+	background: url(../../img/direct/toNext@2x.png) no-repeat;
+	background-position: center right;
+	line-height: 90px;
+	color: #333333;
+	text-align: left;
+}

@@ -1,0 +1,29 @@
+.content-style{
+	background-color: #FFFFFF;
+	padding: 30px;
+	line-height: 60px;
+}
+.content-style p{
+	text-indent: 2em;
+}
+.content-style strong{
+	font-weight: bold;
+}
+.content-style h1{
+	font-size: 40px;
+	text-align: center;
+	line-height: 100px;
+}
+.content-style h5{
+	font-weight: bold;
+	font-size: 35px;
+}
+table{
+	width: 100%;
+	border-collapse:collapse;
+	text-align: center;
+}
+
+table td{
+	border:1px solid #999999;
+}

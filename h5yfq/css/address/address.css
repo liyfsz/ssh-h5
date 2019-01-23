@@ -1,0 +1,83 @@
+ul.address-list li{
+	margin-bottom: 20px;
+	background-color: #FFFFFF;
+}
+ul.address-list li > span{
+	font-size: 32px;
+	color: #606060;
+	font-weight: bold;
+	padding: 0px 44px 0px 30px;
+	line-height: 100px;
+}
+ul.address-list li > span+span{
+	padding-left: 0px;
+}
+
+ul.address-list li p{
+	font-size: 26px;
+	color: #929292;
+	line-height: 40px;
+	padding: 0px 90px 0px 30px;
+}
+
+ul.address-list li div.operate-sec{
+	border-top: 1px solid #e1e1e1;
+	margin-top: 38px;
+	padding: 0px 30px;
+	line-height: 68px;
+}
+
+ul.address-list li label{
+    position: relative;
+    font-size: 28px;
+    color: #606060;
+}
+ul.address-list li label input{
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  outerline:none;
+}
+ul.address-list li label input+span{
+	display: inline-block;
+	width:34px;
+  height:34px;
+  border-radius:50%;
+  background-color: #eaeaea;
+  left: 0px;
+  vertical-align: middle;
+  margin-right: 30px;
+}
+ul.address-list li label span:after{
+	content: '\00a0';
+	border: 4px solid #fff;
+	border-top-width: 0;
+	border-right-width: 0;
+	width: 14px;
+	height: 7px;
+	-webkit-transform: rotate(-50deg);
+	position: absolute;
+	top:30px;
+	left:8px;
+}
+ul.address-list li label input:checked+span{
+	background-color: #ffbc00;
+}
+
+
+ul.address-list li a{
+	color: #acacac;
+	font-size: 24px;
+	display: inline-block;
+	background-position: center left;
+	padding-left: 42px;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	margin-left: 50px;
+}
+ul.address-list li a.edit{
+	background-image: url(../../img/icon/edit@2x.png);
+}
+ul.address-list li a.delete{
+	background-image: url(../../img/icon/delete@2x.png);
+}

@@ -1,0 +1,85 @@
+.tab-panel{
+  height:84px;
+  line-height:80px;
+  background-color: #fff;
+}
+.tab-panel ul li{
+  float:left;
+  width:350px;
+  margin:0 12.5px;
+  text-align:center;
+  font-size:28px;
+  border-bottom:4px solid #fff;
+  cursor: pointer;
+}
+.active{
+  border-bottom:4px solid #ffbc00 !important;
+  color: #ffbc00;
+  
+}
+.tab-content > div{
+  display: none;
+}
+.tab-content > div:first-child{
+  display: block;
+}
+.pro{
+  height:200px;
+  width:750px;
+  padding:5px 25px 5px 30px;
+  border-bottom:1px solid #e1e1e1;
+  background-color: #fff;
+}
+.proLeft{
+  width: 190px;
+  height: 190px;
+  overflow:hidden;
+}
+.proRight{
+  width:483px;
+  padding-top:30px;
+  font-size:25px;
+  line-height:45px;
+  color:#414141;
+}
+.order{
+  height: 75px;
+  line-height:75px;
+  padding: 0 30px;
+  background-color: #fff;
+  border-bottom:1px solid #e1e1e1;
+  margin-top:20px;
+}
+.orderName{
+  color:#797979;
+  float:left;
+}
+.orderStatus{
+  color:#9b9b9b;
+  float:right;
+  font-size:26px
+}
+.payWay{
+  line-height:84px;
+  height: 84px;
+  background-color: #fff;
+  
+}
+.payWay p{
+  font-size:28px;
+  color:#606060;
+  float:right;
+  margin-right:43px;
+}
+.payWay a{
+  font-size: 26px;
+  color:#acacac;
+  float:right;
+  margin-right:30px;
+  text-decoration:none;
+}
+.tab-content ul li{
+  list-style:none;
+  box-shadow: -10px 2px 19.6px 0.4px rgba(219, 219, 219, 0.7);
+}
+

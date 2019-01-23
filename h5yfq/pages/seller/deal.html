@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>合同</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index, follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/seller/manage.css" />
+    
+    <script src="../../js/resetpage.js"></script>
+	</head>
+	<body>
+		<div id="html-section">
+			
+		</div>
+		
+		
+	  <div id="dialogs-form">
+		  <div class="mask-content">
+		  	<p id="form-title"></p>
+		    <div class="inputs">
+		    	<input type="hidden" id="accountId" />
+		    	<input type="hidden" id="htId" />
+		    	<div class="fake-box">
+		    		<input disabled="disabled"/>
+		    	  <input disabled="disabled"/>
+		    	  <input disabled="disabled"/>
+		    	  <input disabled="disabled"/>
+		    	  <input disabled="disabled"/>
+		    	  <input disabled="disabled"/>
+		    	</div>
+		    	<input type="tel" id="code" autofocus="autofocus" />
+		    </div>
+		    
+		    <div class="send-email-box">
+		    	<div class="success-cont">
+		    	  <img src="../../img/icon/chenggong.png"/>
+		    	  <input id="email" placeholder="输入邮箱( 发送合同到您的电子邮箱) "/>
+		      </div>
+		      <button class="confirm-btn" id="sendEmail">确定</button>
+		    </div>
+		  </div>
+		</div>
+		
+		<div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+	</body>
+	
+	<script src="../../js/lib/zepto.min.js"></script>
+	<script src="../../js/lib/handlebars/handlebars.js"></script>
+	<script src="../../js/lib/handlebars/handleMethod.js"></script>
+	
+	<script src="../../js/common/tools.js"></script>
+	<script src="../../js/seller/sign.js"></script>
+	
+	<script id="YFQPTSHRZXY-template" type="text/x-handlebars-template">
+		<div class="{{#if (neq dataMap.htType '已签约')}}container{{/if}}">
+			<div class="bg-content-white box">
+			<div class="dealCont">
+				<h5>耀分期平台商户入驻协议</h5>
+				<div>
+					甲方： <u>龙耀创科( 北京) 信息技术有限公司</u>   
+				</div>
+				<div>
+					乙方：<u>{{dataMap.sellerName}}</u>                                  
+				</div>
+				<div>
+					<div>鉴于：</div>
+					<p>
+						甲方与乙方希望进行业务合作, 对有意从乙方购买货物和服务( 以下简称"商品") 的消费者( 以下简称"消费者") 提供分期消费贷款等服务( 以下简称"分期服务") , 甲方作为专业的信用咨询及评估机构, 在国家政策, 法律法规允许的范围内, 可以凭借科学完善的信用识别、判断、评估、管理体系. 为欲购买乙方服务且有资金需求的客户( 以下简称"客户") 提供优质、高效、便携的消费分期服务. 乙方为拥有符合国家相关法律法规要求的从业资质的合法机构, 通过门店和门店员工对分期购服务宣传推动, 达到双方互利共赢. 在此基础上, 双方经过平等协商达成本合作协议( 以下简称"协议") . 
+					</p>
+				</div>
+				<div>
+					<div>一、合模式及内容</div>
+					<p>
+					
+					1. 甲乙双方将在各自的业务及产品推广上互相助力, 乙方积极向甲方推荐在甲方的业务服务范围内, 具有消费分期需求的客户, 甲方为购买乙方服务并符合条件的客户提供分期付款服务. <br />
+2. 甲乙双方将在各自品牌推广平台上就本项目合作内容进行联合推广, 推广渠道包括但不限于各自官网、微信公众号、微博、APP、乙方店面宣传物料展示等. <br />
+3. 为了达成更好的合作效果, 甲乙双方将探索更多元化的、全方位的合作模式. 将合作深入到线上及线下的组合营销活动, 联合品牌推广活动以及业务创新推广活动. 直接为甲乙双方业务导入客流. <br />
+4. 甲乙双方应建立长效沟通机制, 及时互通信息, 达成信息共享, 双方及时互通市场中的客户信息, 以便双方对各自业务的市场策略及时更新调整. 
+				</p>
+				</div>
+				
+				<div>
+					<div>二、合作原则</div>
+					<p>
+					
+					甲乙双方在合作中建立的互信、惯例与默契是商业合作战略伙伴关系的基础, 提高效率与共同发展是甲乙双方合作的目标和根本利益. 本协议的基本原则是：<br />
+1. 平等、自愿, 意思自治原则, 甲乙双方在平等自愿的前提下签订本协议. 协议的内容经过甲乙双方充分协商, 是甲乙双方的真实意思表示. <br />
+2. 长期稳定合作的原则：甲乙双方的合作应基于彼此信任, 着眼于长远利益, 甲乙双方致力于长期稳定的合作. <br />
+3. 共同发展的原则：本协议皆在促进甲乙双方的共同发展, 且符合甲乙双方的根本利益. 甲乙双方应充分发挥双方优势, 优势互补, 提高竞争力, 共同发展. 
+4. 诚实信用原则：甲乙双方恪守本协议中所作之承诺. 确保甲乙双方的共同利益. 
+				</p>
+				</div>
+				
+				<div>
+					<div>三、业务操作流程</div>
+					<p>
+					
+					甲、乙双方同意共同配合以下操作流程：<br />
+1. 乙方配合甲方及授权代理商录入平台入驻信息, 信息需保证真实有效, 与实际运营情况一致；<br />
+2. 乙方消费者通过扫描"耀分期商户二维码"或者通过"耀分期"APP搜索商户申请分期服务；    <br />
+3. 乙方须配合消费者完成资料采集工作, 甲方审核并回传审核结果至消费者；    <br />
+4. 乙方向消费者开具所购商品的全款发票、有关发货单据( 如有) 、服务合同( 如有) . 
+				</p>
+				</div>
+				
+				
+				<div>
+					<div>四、权利及业务</div>
+					<p>
+					
+					1. 双方应按照约定时间将客户所借款项汇入乙方指定对公账户. <br />
+2. 甲方需自行提供乙方推广甲方业务时, 所需的与甲方业务及产品推广相关的品牌宣传物料. <br />
+3. 乙方应向甲方提供与其自身相关的各项资料, 资料包括但不限于营业执照副本、税务登记证、银行开户许可证以及国家相关法律法规要求的从业资质等. <br />
+4. 乙方应向甲方提供关于商品的市场信息, 包括销售价格和销售政策等.    <br />
+5. 乙方不得以虚构的或不真实的商品交易与消费者恶意串通获得分期购服务和贷款.   <br />  
+6. 乙方应对销售的商品负完全责任. 如果消费者对乙方销售的商品或提供的相关服务有争议, 乙方应与消费者解决而不牵涉甲方. 如果消费者由于商品问题拒绝向甲方付款, 乙方应向消费者澄清甲方不对商品质量和货物售后服务负责.     <br />
+7. 乙方须向消费者交付商品, 并不得支付消费者现金或扣留商品, 或明知其雇员有该等行为却予以容忍或对该等行为疏于管理或以其他方式允许该等行为的存在. <br />
+8. 退货   <br />
+1) 如消费者在取得商品后15日内请求退货且乙方同意的, 乙方应通知甲方并配合销售代表完成退款手续后方可向消费者退款.  <br />
+2) 甲方原则上不同意乙方接受消费者在取得商品15日后的退货请求, 如消费者在取得商品15日后向乙方请求退货的, 乙方必须征得甲方书面同意后方可接受消费者退货请求, 否则乙方应承担因消费者不再履行贷款协议义务而给甲方及贷款人造成的损失. <br /> 
+3) 乙方接受消费者退货后, 应当将消费者自付部分以外的商品价款( 即"未结算金额") 退还给甲方, 或甲方在其应支付给乙方的款项中扣除；如甲方就该笔贷款收取了乙方服务费, 应同时退还乙方. <br />
+9. 乙方或其雇员均不得参与任何有组织的套现或欺诈活动或明知却支持或容忍该等活动.    <br />
+10. 乙方应在其门店内开展任何有关分期服务的市场营销活动之前均应与甲方进行沟通并得到甲方对该营销活动的确认.    <br />
+11. 乙方应在知晓任何在乙方门店内发生的欺诈或套现活动或其他可疑行为后立即通知甲方.    <br />
+12. 乙方承诺将向其门店内推广分期购服务的乙方销售人员提供必要的激励机制以鼓励乙方门店销售人员积极推广分期购服务.    <br />
+13. 乙方承诺其雇员将严格按照本协议所约定的条款和条件与甲方进行业务合作. 乙方对其门店及门店雇员履行本协议所产生的法律后果承担全部责任. <br />
+				</p>
+				</div>
+				
+				<div>
+					<div>五、 知识产权</div>
+					<p>
+					
+					1. 在本协议期间, 如双方无其他约定, 则任何一方在得到对方的书面同意或电子邮件同意后, 在推广和广告宣传活动和印刷材料中, 可以使用对方的名称, 标志和商标( "标识") .     <br />
+2. 乙方在本协议终止或到期后应向甲方返还所有甲方提供的文件和包含有甲方知识产权或版权的文件.  <br />
+				</p>
+				</div>
+				
+				<div>
+					<div>六、转让 </div>
+					<p>
+					
+					1.乙方未经甲方事先书面同意, 不得向第三方转让或转移其在本协议下的全部或部分权利和义务.    <br />
+					2. 乙方同意, 甲方可以向其关联方转让其在本协议下的全部或部分权利和义务. 具体转让的权利和义务的范围、权利义务的受让方以及权利义务转让的生效时间以甲方向乙方另行发出的正式书面通知为准. 
+				</p>
+				</div>
+				
+				<div>
+					<div>七、声明与承诺</div>
+					<p>
+					
+					1.双方均具有完全民事权利行为能力, 并以其全部资产承担民事责任.    <br />
+2.乙方承诺, 甲方有权自主选择乙方店内任何商品作为或者不作为享受甲方分期购服务的目标商品. <br />
+3. 乙方承诺, 所有贷款将只被用于购买贷款协议所注明的商品.   <br />
+4. 乙方承诺, 对于根据贷款协议有意从乙方购买商品的消费者, 甲方有权完全依据自己的判断决定是否为其提供分期购服务. <br />
+				</p>
+				</div>
+				
+				<div>
+					<div>八、 违约责任 </div>
+					<p>
+					
+					1. 乙方应向甲方赔偿因乙方和/或乙方其他雇员在推广分期购服务的过程中参与任何欺诈活动或套现活动而给甲方造成的全部损失, 包括但不限于该笔贷款本金及利息和/或手续费损失、甲方调查欺诈行为所产生的调查费用、法律费用, 且甲方有权立即终止与乙方的合作. 
+					<br />
+					2. 如果任何一方不履行本协议下的义务, 违约方应向其他方赔偿由其不履行或不完全履行义务造成的一切损失. 
+				</p>
+				</div>
+				
+				<div>
+					<div>九、 修改和终止</div>
+					<p>
+					
+					1. 本协议只能由双方以书面形式修改.   <br />
+2. 任何一方可以提前30日通知其他方终止本协议.   <br />
+3. 如果一方违反本协议的任何条款, 未违约方可以书面通知违约方说明违约的情况并且要求违约方于5个工作日内补正或纠正. 如果在此5个工作日期间内违约没有得到补正或纠正, 未违约方可以书面通知违约方终止本协议. 
+				</p>
+				</div>
+				
+				<div>
+					<div>十、 通知</div>
+					<p>
+					
+					1. 本合同下的任何通知和文件应使用中文, 并且送达至下列地址或一方根据本条通知的其他地址：<br />
+					<div>
+						(a) 甲方地址： <u>浙江省杭州市滨江区中赢国际大厦1幢702室 </u><br />
+						           联系人：<u>张文健</u><br />
+						           联系电话：<u>13764320137 </u><br />
+						           邮箱： <u>zhangwenjian@longyao360.com</u>
+					</div>
+					
+					<div>
+						(a) 乙方地址： <u>{{dataMap.secondPartyAdd}} </u><br />
+						           联系人：<u>{{dataMap.secondPartyContacts}}</u><br />
+						           联系电话：<u>{{dataMap.secondPartyPhone}} </u><br />
+						           邮箱： <u>{{dataMap.secondPartyEmail}}</u>
+					</div>
+					2. 如果双方上述地址发生变化, 该方应在变化前3日通知另一方. 否则按原地址发出的通知将被视为有效送达. <br />
+3. 任何通知, 要求或通信在下列情况应被视为有效送达：  <br />
+(1) 如果通过邮寄( 挂号或快件) , 在邮寄发出的第七日；  <br />
+(2) 如果是通过传真, 在得到确认发送的打印报告时； <br />
+(3) 如果是通过专人送达, 在收件人签署回条时. 
+				</p>
+				</div>
+				
+				<div>
+					<div>十一、 适用法律和争议解决  </div>
+					<p>
+					
+					1. 本协议如有未尽事宜, 可由双方签订补充协议予以明确, 补充协议与本协议具有同等法律效力, 补充协议与本协议不一致的, 以补充协议为准. <br />
+2. 与本合同有关的或因本合同发生的所有争议应由双方通过友好协商解决. 如果争议不能通过协商解决, 任何乙方均有权向北京市朝阳区人民法院提起诉讼.  
+				</p>
+				</div>
+				
+				<div>
+					<div>十二、 其它</div>
+					<p>
+					
+					1. 甲方将定期或不定期向乙方以电子邮件的形式发出甲方代消费者支付的贷款金额及明细清单, 乙方应在确认无误之后在此贷款金额及明细清单上盖章, 并于收到此贷款金额及明细清单之后的10个工作日内寄出给甲方. <br />
+					2. 本协议正本一式四份, 甲方持三份, 乙方持一份. 有效期为壹年, 签订之日起即刻生效. 协议到期前 30 日内, 甲乙双方可根据自身情况协商协议的续约或终止事宜.   <br />
+3. 未经双方书面同意而对本协议的修改无效. 但甲方有权在其认为必要时对本协议附件不时地进行修改, 且无须得到乙方对该等修改的同意. 甲方在将相应附件的变更通知乙方时, 乙方应按照修改后的相应附件执行.  <br />
+4. 本协议构成双方就所述主题的全部协议, 取代所有此前或同时就相同主题的协议和协商.  <br />
+5. 任何一方未能行使或延迟行使本协议的权利或权力, 除非书面通知放弃, 否则不应认为是对该权利或权力的放弃. 任何个别或部分地对权利或权力的行使不应阻碍未来对权利的行使. <br />
+				</p>
+				</div>
+				
+				<p>
+					<div>
+					甲方( 盖章) ： 
+				</div>
+				<div>
+					授权代表： <u>{{dataMap.firstPartyDele}}</u>
+				</div>
+				<div>
+					乙方( 盖章) ：
+				</div>
+				<div>
+					授权代表： <u>{{dataMap.secondPartyContacts}}</u>
+				</div>
+				<div>
+					双方在此确认于<u>{{dataMap.nowYear}}</u>年<u>{{dataMap.nowMonth}}</u>月<u>{{dataMap.nowDay}}</u>日签署本协议. 
+				</div>
+				</p>
+				
+				<div class="content-bot">{{dataMap.nowYear}}.{{dataMap.nowMonth}}.{{dataMap.nowDay}}</div>
+			</div>
+		</div>
+	</div>
+	{{#if (neq dataMap.htType "已签约")}}
+	<footer>
+	  <button class="button-bottom" id="agree">同意并签约</button>
+	</footer>
+	{{/if}}
+	</script>
+</html>

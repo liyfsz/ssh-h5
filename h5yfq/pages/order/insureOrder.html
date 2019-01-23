@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>订单确认</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/order/order.css" />
+    
+    <script type="text/javascript" src="../../js/resetpage.js"></script>
+
+  </head>
+
+  <body>
+  	<div id="html-section">
+  		
+  	</div>
+    
+    
+    
+    <div id="payReturn"></div>
+		<div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/order/insureOrder.js"></script>
+    
+    <script id="content-template" type="text/x-handlebars-template">
+    	<section class="container" >
+        <ul class="address-list">
+      	<li>
+      		<a class="toAddressList">
+      			{{#if rows.memberAddress}}
+      		  <span>{{rows.memberAddress.memberName}}</span><span>{{rows.memberAddress.mobile}}</span>
+      		  <p>{{rows.memberAddress.addAll}} {{rows.memberAddress.addressInfo}}</p>
+      		  {{else}}
+      		  <div class="defaultIcon">请选择默认地址</div>
+      		  {{/if}}
+      	  </a>
+      	</li>
+      </ul>
+      
+      <div class="orderDetail">
+      	<div class="clearBoth border-bottom">
+      		<img class="fl product-logo" data-url="{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].product.masterImg}}"/>
+      		<div class="fr">
+      			<h4>{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].product.name1}}</h4>
+      			<label class="font24">{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].specInfo}}</label>
+      			<span class="main-color font25">￥{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].currAmount}}</span>
+      		</div>
+      	</div>
+      	
+				<dl>
+				  <dt class="">支付方式</dt>
+				  
+				  <dd class="main-color payText">{{judge rows.jrType}}</dd>
+				</dl>
+				<form>
+				{{#if (neq rows.jrType '1')}}
+				<dl>
+				  <dt>是否用白条</dt>
+				  <dd>
+				  	<span>
+				  		<input type="radio" name="isUserCredit" id="userType1" value="y" checked="checked" class="credit"/>
+				  		<label for="userType1">是</label>
+				    </span>					
+				  </dd>
+				  
+				  
+				</dl>
+				
+				<dl class="creditList">
+				  <dt>用信类型</dt>
+				  {{#if rows.content.length}}
+				  {{#each rows.content}}
+				  <dd>
+				  	<span>
+				  		<input type="radio" name="orgId" id="credit{{@index}}" value="{{creditNum}},{{orgId}}" data-quato ="{{availableQuota}}" class="creditType"/>
+				  		<label for="credit{{@index}}">{{orgName}}</label>
+				  		<input type="hidden" value="{{orgId}}"/>
+				    </span>
+				  </dd>
+				  {{/each}}
+				  {{else}}
+				  <dd>无</dd>
+				  {{/if}}
+				</dl>
+				<dl class="creditQuato">
+				  <dt class="">信用额度</dt>
+				  <dd>
+				    <span class="quatoVal">￥0</span>
+				  </dd>
+				</dl>
+				
+				<dl class="loan-protocal">
+				  <dd><a href="javascript:;" class="main-color" target="_blank">借款协议</a></dd>
+				</dl>
+				
+				{{/if}}
+				
+    		<input name="saoFlag" type="hidden" id="saoFlag" value="1"/>
+    		<input name="" value="{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].currAmount}}" type="hidden" id="currAmount"/>
+    		<input name="addressId" value="{{rows.memberAddress.id}}" type="hidden" id="addressId"/>
+    		<input name="periods" value="{{defaultZero rows.cartInfoVO.cartListVOs.[0].cartList.[0].term}}" type="hidden"/>
+    		<input name="periodPayMoney" value="{{defaultZero rows.cartInfoVO.cartListVOs.[0].cartList.[0].periodPayMoney}}" type="hidden"/>
+    		<input name="payMoney" value="{{defaultZero rows.cartInfoVO.cartListVOs.[0].cartList.[0].payMoney}}" type="hidden" id="payMoney"/>
+    		<input name="sessionId" type="hidden" id="sessionId"/>
+    	  <input name="jrType" type="hidden" value="{{rows.jrType}}" id="jrType"/>
+    		<input name="isOrder" type="hidden" id="isOrder"/>
+    		<input name="orderId" type="hidden" id="orderId"/>
+    		<input name="" type="hidden" id="sellerId" value="{{rows.sellerId}}"/>
+
+    	  
+    	  
+				{{#if (eq rows.jrType "1")}}
+				<dl>
+				  <dt class=""><img src="../../img/icon/paybao.png"/></dt>
+				  <dd>
+				  	<span>
+				  		<input type="radio" name="optionsRadios" id="radio2" value="alipay" class="select-pay" checked="checked"/>
+				  		<label for="radio2"></label>
+				  	</span>
+				  </dd>
+				</dl>
+				<!--<dl>
+				  <dt class=""><img src="../../img/icon/weixin.png"/></dt>
+				  <dd>
+				  	<span>
+				  		<input type="radio" name="optionsRadios" id="radio1" value="wxpay" class="select-pay"/>
+				  		<label for="radio1"></label>
+				  	</span>
+				  </dd>
+				</dl>-->
+				{{/if}}
+				<dl class="border-bottom-no">
+				  <dt>支付金额</dt>
+				  {{#if (eq rows.jrType "1")}}
+				  <dd>￥{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].currAmount}} 
+				  </dd>
+				  {{else if (gt rows.cartInfoVO.totalNumber 1)}}
+				  
+				  <dd>
+				  	(
+				  	<span class="second_color">{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].payMoney}}首付</span> + 
+				  	￥{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].termMoney}} 
+				  	× <span class="main-color">{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].term}}期</span>
+				     ) × {{rows.cartInfoVO.totalNumber}}
+				  </dd>
+				  {{else}}
+				  <dd>
+				  	<span class="second_color">{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].payMoney}}首付</span> + 
+				  	￥{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].termMoney}} 
+				  	× <span class="main-color">{{rows.cartInfoVO.cartListVOs.[0].cartList.[0].term}}期</span>
+				  </dd>
+				  {{/if}}
+				  
+				</dl>
+				{{#if rows.unusedCouponList.length}}
+				<dl class="couponList">
+				  <dt>优惠券</dt>
+				  <dd>
+				    {{#each rows.unusedCouponList}}
+				  	<input name="useCouponId" value="{{id}}" type="radio" id="coupon{{@index}}"/>
+				  	{{#if (eq type 'DXQ')}}
+				  	<label for="coupon{{@index}}">{{favourable}}<i>抵</i></label>
+				  	{{else}}
+				  	<label for="coupon{{@index}}">免息券</label>
+				  	{{/if}}
+				  	{{/each}}
+				  </dd>
+				</dl>
+				{{/if}}
+				<dl>
+				  <dt>运费</dt>
+				  <dd>+￥0.0</dd>
+				</dl>
+				</form>
+      </div>
+      </section>
+      <footer>
+        <button class="button-bottom" id="submitForm"> 提交订单</button>
+      </footer>
+    	
+    </script>
+  </body>
+
+</html>

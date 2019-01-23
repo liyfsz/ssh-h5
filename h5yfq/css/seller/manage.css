@@ -1,0 +1,170 @@
+.box{
+	margin: 30px 30px 0px 30px;
+	box-shadow: 0px 3px 8px 2px rgba(219, 219, 219, 0.7);
+	border-radius: 15px;
+}
+
+.box ul li{
+	float: left;
+	width: 25%;
+	text-align: center;
+	margin-top: 44px;
+	margin-bottom: 20px;
+	font-size: 26px;
+	color: #2d2824;
+}
+
+.box ul li a{
+	text-align: center;
+	display: block;
+}
+.box ul li a img{
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+
+/*商家管理选项*/
+.box .list a{
+	display: block;
+	text-decoration: none;
+	color: #131313;
+	font-size: 28px;
+	line-height: 98px;
+	margin: 0px 20px;
+	border-bottom: 1px solid #e7e7e7;
+	background: url(../../img/imgs/rarrow.png) no-repeat;
+	background-position: center right;
+}
+.box .list a:last-child{
+	border-bottom: none;
+}
+.box .list a img{
+	vertical-align: middle;
+	margin-left:8px;
+	margin-right: 35px;
+}
+.box .list a span{
+	float: right;
+	padding-right: 88px;
+	color: #b4b4b4;
+	font-size: 26px;
+}
+.box .list a span.new{
+	color: #ff6f05 !important;
+	font-size: 28px;
+}
+
+.box h5{
+	font-size: 32px;
+	color: #131313;
+	line-height: 120px;
+	text-align: center;
+}
+.box .dealCont{
+	padding: 0px 26px;
+	font-size: 26px;
+	line-height: 40px;
+	color: #131313;
+}
+.box .dealCont p{
+	padding-bottom: 30px;
+	
+}
+
+.box .content-bot{
+	text-align: right;
+	padding-right: 32px;
+	padding-bottom: 40px;
+	font-size: 28px;
+	color: #9f9f9f;
+}
+
+.button-bottom{
+	margin-bottom: 24px;
+	color: #352a2b;
+}
+.mask-content div{
+	text-align: center;
+	font-size: 0px;
+}
+
+.inputs{
+	position: relative;
+}
+.mask-content div.inputs input,.mask-content div.inputs input[disabled=disabled]{
+	display: inline-block;
+	width: 46px;
+	height: 46px;
+	border: 2px solid #858585;
+	margin: 36px 19px 44px 19px;
+	-webkit-appearance: none; /* 方法2 */
+	border-radius: 0px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 30px;
+	background-color: #FFFFFF;
+}
+.mask-content div.inputs input[type=tel]{
+	width: 99%;
+height: 48px;
+color: transparent;
+position: absolute;
+top: 0;
+left: 0;
+border: none;
+font-size: 18px;
+opacity: 0;
+z-index: 3;
+letter-spacing: 35px;
+}
+.mask-content div.inputs input[type=tel]:focus{
+	left: -1000px;
+}
+.confirm-btn,.confirm-btn:focus{
+	width: 476px;
+	margin: 0px auto;
+	line-height: 70px;
+	border-radius: 10px;
+  background-image: linear-gradient(to right, #fab900, #ffd600);
+  border: none;
+  font-size: 36px;
+  color: #352a2b;
+  display: block;
+  margin-bottom: 40px;
+  border: none;
+}
+
+.success-cont{
+	text-align: center;
+}
+.success-cont img{
+	display: block;
+	margin: auto;
+	margin-top: 44px;
+	margin-bottom: 50px;
+}
+.success-cont input{
+	display: block;
+	width: 476px;
+	height: 70px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: solid 1px #c1c1c1;
+  margin: auto;
+  font-size: 26px;
+  margin-bottom: 20px;
+  -webkit-appearance: none; /* 方法2 */
+ padding-left: 28px;
+}
+
+.send-email-box{
+	display: none;
+}
+
+::-webkit-input-placeholder{    
+     color: #b4b4b4;  
+}
+
+

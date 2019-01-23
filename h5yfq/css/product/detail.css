@@ -1,0 +1,214 @@
+#html-section{
+	height: 100%;
+}
+.container{
+	height: calc(100% - 114px);
+	height: -moz-calc(100% - 114px);
+	height: -webkit-calc(100% - 114px);
+	overflow: auto;
+}
+.product-des{
+	margin-top: 10px;
+	padding: 0px 30px 25px 30px;
+	overflow: hidden;
+}
+.product-des dl{
+	line-height: 100px;
+}
+.product-des > p{
+	font-size: 32px;
+	color: #414141;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+ .product-des p+p{
+	font-size: 26px;
+} 
+
+
+
+
+.product-setting{
+	margin-top: 14px;
+	padding: 0px 30px;
+	overflow: hidden;
+}
+
+.product-setting dl{
+	line-height: 48px;
+	width: 690px;
+	display: block;
+	margin-top: 14px;
+}
+.product-setting > dl:first-child{
+	margin-top: 60px;
+}
+.product-setting dl.term-box,.product-setting div.coupon-box{
+	display: none;
+}
+
+.product-setting dl dt{
+	margin-bottom: 25px;
+}
+.product-setting dl dt+dt{
+	font-size: 28px;
+}
+.product-setting dl dd{
+	font-size: 26px;
+	color: #939393;
+	overflow: auto;
+}
+.product-setting dl dd span{
+	position: relative;
+	display: inline-block;
+	margin: 10px 30px 20px 0px;
+}
+
+.product-setting dl dd span > label{
+  display: inline-block;
+  vertical-align: middle;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px dashed #939393;
+  text-align: center;
+  min-width: 190px;
+	padding: 0px;
+	position: relative;
+}
+
+.product-setting dl dd span > label i{
+	position: absolute;
+	right: 0px;
+	top:-25px;
+	color: red;
+}
+.product-setting dl input[type="radio"]:checked + label{
+    background-color: #ffbc00;
+    color: #FFFFFF;
+    border-color: #ffbc00;
+}
+.product-setting dl input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+
+.product-tab{
+	margin-top: 13px;
+}
+.product-tab .tab{
+	display: -webkit-flex; /* Safari */
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #c8c8c8;
+  margin-bottom: 20px;
+}
+
+.product-tab .tab li{
+	flex: 1;
+	-webkit-flex: 1;
+	text-align: center;
+	line-height: 96px;
+	color: #606060;
+	cursor: pointer;
+}
+.product-tab .tab li.active{
+	border-bottom: 2px solid #ffbc00;
+}
+
+.tab-content > div{
+	display: none;
+}
+
+.tab-content > div:first-child,.tab-content > div:first-child img{
+	display: block;
+}
+
+footer{
+	line-height: 114px;
+	background-color: #FFFFFF;
+	height: 114px;
+}
+footer span.mallMobilePrice{
+	width: 200px;
+	padding-left: 30px;
+	color: #ffbc00;
+	background-position-x: 321px;
+	box-sizing: border-box;
+	text-align: left;
+	float: left;
+}
+footer span.contactSer{
+	background: url(../../img/icon/kefu.png);
+	float: left;
+	width: 80px;
+	height: 114px;
+	color: #ffbc00;
+	background-size: 61px;
+	background-position:center;
+	text-align:center;
+	background-repeat: no-repeat;
+	line-height: 101px;
+	cursor: pointer;
+	padding-left: 10px;
+}
+footer img{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 45px;
+}
+footer a{
+  display: inline-block;
+  width: 333px;
+  text-align: center;
+  background-color: #FFBC00;
+  color: #FFFFFF;
+  font-size: 40px;
+}
+footer a.uncarrige{
+	background-color: #D9D9D9;
+}
+
+table{
+	width: 100%;
+	
+	border-collapse: collapse;
+}
+
+.size-param table td{
+	line-height: 80px;
+	color: #999999;
+	padding-left: 20px;
+	border: 1px solid #E1E1E1;
+}
+
+
+.paragraph{
+	color: #999999;
+	line-height: 40px;
+	padding: 0px 30px;
+}
+
+
+.paragraph h5{
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+}
+
+.paragraph h5:after, .paragraph h5:before {  
+  background: #999;  
+  content: "";  
+  height: 1px;  
+  position: absolute;  
+  top: 50%;  
+  width: 35%;
+}  
+  
+    /*调整背景横线的左右距离*/  
+.paragraph h5:before {  
+  left:5px;  
+}  
+.paragraph h5:after {  
+ right: 5px;  
+} 

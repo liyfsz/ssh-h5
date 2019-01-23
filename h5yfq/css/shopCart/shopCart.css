@@ -1,0 +1,116 @@
+.wrapper{
+  height: calc(100% - 220px);
+  height: -moz-calc(100% - 220px);
+  height: -webkit-calc(100% - 220px);
+  overflow: auto;
+}
+.goodsList{
+	margin: 20px 0px;
+	font-size: 26px;
+}
+.goodsList h6{
+	line-height: 60px;
+	border-bottom: 1px solid #E1E1E1;
+	padding-left: 10px;
+}
+.goodsList ul li{
+	border-bottom: 1px solid #E1E1E1;
+	position: relative;
+}
+.goodsList ul li > a{
+	display: inline-block;
+	padding: 10px 0px;
+	color: #000000;
+	width: 86%;
+}
+.goodsList ul li > div{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px 30px;
+	margin-top: -178px;
+}
+/*单选样式修改*/
+input[type="checkbox"] + label::before,input[type="radio"] + label::before {
+    content: "\2713"; /*不换行空格*/
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #E1E1E1;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 36px;
+}
+input[type="checkbox"]:checked + label::before,input[type="radio"]:checked + label::before {
+    background-color: #FF9900;
+}
+input[type="checkbox"] ,input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+/*单选样式修改结束*/
+.goodsList ul li > a img{
+	height: 200px;
+	width: 200px;
+}
+
+.goodsList ul li > a .product_desc > p{
+	line-height: 40px;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	
+}
+.product_desc{
+	width: 420px;
+	float: right;
+	margin-right: 10px;
+}
+
+.product_desc span.fl{
+	padding-top: 10px;
+}
+.operate_button{
+	font-size: 0px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	display: block;
+	width: 148px;
+	position: absolute;
+	right:17px;
+	bottom: 14px;
+	z-index: 2;
+}
+.operate_button i{
+	font-size: 20px;
+	font-style: normal;
+	padding: 10px 15px;
+	display: inline-block;
+}
+.operate_button i:nth-child(2){
+	padding-left: 25px;
+	padding-right: 25px;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+
+.bottom_sum{
+	background: #FFFFFF;
+	line-height: 100px;
+	padding-left: 30px;
+}
+.bottom_sum span,.bottom_sum a.delete{
+	display: none;
+}
+.bottom_sum label{
+	color: #000000;
+}
+.bottom_sum a{
+	background: #FF9900;
+	font-size: 34px;
+	color: #FFFFFF;
+	padding: 0px 80px;
+}
+.warnBg{
+	background: #FF793B !important;
+}

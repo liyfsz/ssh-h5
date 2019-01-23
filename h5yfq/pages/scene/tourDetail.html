@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>商户详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/scene/tourDetail.css" />
+    
+    <script type="text/javascript" src="../../js/resetpage.js"></script>
+
+  </head>
+
+  <body>
+    <section id="html-section">
+      
+    </section>
+    <div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/scene/tourDetail.js"></script>
+    
+    <script id="content-template" type="text/x-handlebars-template">
+    	<div class="product-main bg-color">
+      	<div class="product-cont clearBoth">
+      		<img class="fl logo" data-url="{{rows.sellerApply.logoImg}}"/>
+      		<div class="fr">
+      			<h4>{{rows.sellerApply.company}}</h4>
+      			<div class="address-for">联系地址：</div>
+      			<div>{{rows.sellerApply.companyProvince}}{{rows.sellerApply.companyCity}}{{rows.sellerApply.companyAdd}}</div>
+      		</div>
+      		
+      	</div>
+      </div>
+      <div class="product-item">
+      	<div class="item-title">全部商品</div>
+      	<ul>
+      		{{#each rows.productList}}
+      		<li>
+      			<a href="../product/detail.html?pId={{id}}" class="clearBoth">
+      				<h4>{{name1}}</h4>
+							<div class="fl">
+							  <!--<label>产品参数</label>-->
+							  <span>{{name2}}</span>
+							</div>
+							<div class="fr">
+							  <label>金额：</label>
+							  <span>{{malMobilePrice}}元</span>
+							</div>
+      		  </a>
+      		</li>
+      		{{/each}}
+      		<!--<li class="clearBoth">
+      			<div class="fl">
+      				<h4>美国自由行</h4>
+      				<label>行程天数</label>
+      				<span>10天8晚</span>
+      			</div>
+      			<div class="fr">
+      				<label>金额：</label>
+      				<span>18999.00元</span>
+      			</div>
+      		</li>
+      		<li class="clearBoth">
+      			<div class="fl">
+      				<h4>东南亚航线邮轮游</h4>
+      				<label>行程天数</label>
+      				<span>10天8晚</span>
+      			</div>
+      			<div class="fr">
+      				<label>金额：</label>
+      				<span>24999.00元</span>
+      			</div>
+      		</li>
+      		<li class="clearBoth">
+      			<div class="fl">
+      				<h4>日本参团游</h4>
+      				<label>行程天数</label>
+      				<span>10天8晚</span>
+      			</div>
+      			<div class="fr">
+      				<label>金额：</label>
+      				<span>18999.00元</span>
+      			</div>
+      		</li>
+      		<li class="clearBoth">
+      			<div class="fl">
+      				<h4>欧洲自由行</h4>
+      				<label>行程天数</label>
+      				<span>10天8晚</span>
+      			</div>
+      			<div class="fr">
+      				<label>金额：</label>
+      				<span>18999.00元</span>
+      			</div>
+      		</li>-->
+      	</ul>
+      </div>
+    </script>
+  </body>
+
+</html>

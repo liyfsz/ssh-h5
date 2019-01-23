@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>身份证信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="{{path.app}}/css/common/reset.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/common/app.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/common/form.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/lib/mobiscroll/mobiscroll_002.css"  type="text/css">
+    <link rel="stylesheet" href="{{path.app}}/css/lib/mobiscroll/mobiscroll.css"  type="text/css">
+    <link rel="stylesheet" href="{{path.app}}/css/lib/mobiscroll/mobiscroll_003.css"  type="text/css">
+    <link rel="stylesheet" href="{{path.app}}/css/personalInfor/personalInfor.css" />
+    
+    <script type="text/javascript" src="{{path.app}}/js/common/resetpage.js" ></script>
+  </head>
+
+  <body class="bgffffff">
+  	<header>
+    <a href="javascript:;" class="goBack"></a>
+    <span>身份证信息</span>
+</header>
+    <div class="formSec">
+      <form action="" class="formBox" id="messForm">
+        <input type="hidden" name="cuId" id="cuId"/>
+        <input type="hidden" name="sessionId" id="sessionId"/>
+        <div class="form-group">
+          <div class="picDiv">
+            <label>身份证正面</label>
+            <input type="file" class="uploadPic"  id="frontIDCard" accept="image/*"/>
+            <input type="hidden" name="frontIDCard" id="frontIDCardBase64"/>
+            <span class="rigFace"><img src="{{path.app}}/img/personal/addPic.png"/></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="picDiv">
+            <label>身份证反面</label>
+            <input type="file" class="uploadPic" id="negativeIDCard" accept="image/*"/>
+            <input type="hidden" name="negativeIDCard" id="negativeIDCardBase64"/>
+            <span class="backFace"><img src="{{path.app}}/img/personal/addPic.png"/></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>姓名:</label>
+          <input placeholder="请输入" type="text" name="name" id="name"/>
+        </div>
+        <div class="form-group">
+          <label>身份证号:</label>
+          <input placeholder="请输入" type="text" name="idnumber" id="idNumber"/>
+        </div>
+        <div class="form-group">
+          <label>有效期限:</label>
+          <span class="inputLine">
+            <input id="idTermBgn" runat="server" name="idTermBgn" readonly="readonly" style="width:30%;" />
+            <em>至</em>
+            <input id="idTermEnd" runat="server" name="idTermEnd"  readonly="readonly" style="width:30%;" />
+          </span>
+        </div>
+
+      </form>
+      <div class="btnDiv">
+        <button id="submitIdCard">个人信息</button>
+      </div>
+    </div>
+    
+    <!--弹出框1-->
+		<div class="dialog_alert" id="dialog">
+			<div class="mask"></div>
+			<div class="dialog">
+				<div class="dialog_hd"><strong class="dialog_title">提示</strong></div>
+				<div class="dialog_bd">
+					提示信息
+				</div>
+				<div class="dialog_ft clearBoth">
+					<a href="javascript:;"  class="btn_dialog cancelBtn one">知道了</a>
+				</div>
+			</div>
+		</div>
+
+    <script type="text/javascript" src="{{path.app}}/js/lib/jquery-1.10.1.min.js"></script>
+    <script src="{{path.app}}/js/common/mobileBUGFix.mini.js"></script>
+	  <script type="text/javascript" src="{{path.app}}/js/lib/MegaPixImage/MegaPixImage.js"></script>
+    <script src="{{path.app}}/js/lib/mobiscroll/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="{{path.app}}/js/lib/mobiscroll/mobiscroll_004.js" type="text/javascript"></script>
+    <script src="{{path.app}}/js/lib/mobiscroll/mobiscroll.js" type="text/javascript"></script>
+    <script src="{{path.app}}/js/lib/mobiscroll/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="{{path.app}}/js/lib/mobiscroll/mobiscroll_005.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="{{path.app}}/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{path.app}}/js/common/app.js"></script>
+    <script type="text/javascript" src="{{path.app}}/js/common/validate.js"></script>
+    <script type="text/javascript" src="{{path.app}}/js/personalInfor/idcard.js"></script>
+  </body>
+
+</html>

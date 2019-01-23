@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>银行卡信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="{{path.app}}/css/common/reset.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/common/app.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/common/form.css" />
+    <link rel="stylesheet" href="{{path.app}}/css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="{{path.app}}/js/common/resetpage.js" ></script>
+  </head>
+
+  <body class="bgffffff">
+  	<header>
+    <a href="javascript:;" class="goBack"></a>
+    <span>银行卡信息</span>
+</header>
+    <div class="formSec">
+      
+    </div>
+    <!--隐藏的类数据字典-->
+    <div class="modalBox">
+      <div class="maskBg"></div>
+      <div class="modalCon modalCon1" data-link="relate1">
+        <ul class="bank">
+          
+        </ul>
+      </div>
+    </div>
+    
+    
+    <!--弹出框1-->
+		<div class="dialog_alert" id="dialog">
+			<div class="mask"></div>
+			<div class="dialog">
+				<div class="dialog_hd"><strong class="dialog_title">提示</strong></div>
+				<div class="dialog_bd">
+					提示信息
+				</div>
+				<div class="dialog_ft clearBoth">
+					<a href="javascript:;"  class="btn_dialog cancelBtn one">知道了</a>
+				</div>
+			</div>
+		</div>
+		
+    <script src="{{path.app}}/js/lib/jquery-1.10.1.min.js"></script>
+    <script src="{{path.app}}/js/lib/jquery.cookie.js"></script>
+    <script src="{{path.app}}/js/common/app.js"></script>
+    <script src="{{path.app}}/js/dataDictionary/bank.js"></script>
+    <script src="{{path.app}}/js/common/mask.js"></script>
+    <script src="{{path.app}}/js/lib/handlebars/handlebars.js"></script>
+    <script src="{{path.app}}/js/lib/handlebars/handleMethod.js"></script>
+    <script src="{{path.app}}/js/common/validate.js"></script>
+    <script src="{{path.app}}/js/personalInfor/bankCard.js"></script>
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="form-template" type="text/x-handlebars-template">
+    {{{{raw}}}}
+    <form action="" class="formBox" id="messForm">
+        <input type="hidden" name="cuId" id="cuId"/>
+        <input type="hidden" name="sessionId" id="sessionId"/>
+        <div class="form-group">
+          <label>银行卡信息:</label>
+          <input placeholder="请输入" type="text" name="bankCardNu" value="{{bankCardNu}}" id="bankCardNu"/>
+        </div>
+        <div class="form-group wholeWidth ">
+          <label>开户行:</label>
+          <span class="togRelate relate1" data-con="modalCon1">{{defaultText bank}}</span>
+          <input type="hidden" name="bank" value="{{bank}}" class="dicText" id="bank"/>
+          <input  type="hidden" name="" value="" class="dicCode"/>
+        </div>
+      </form>
+      <div class="btnDiv">
+        <button id="subBank">个人中心</button>
+      </div>
+    {{{{/raw}}}}
+  </script>
+</html>

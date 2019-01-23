@@ -1,0 +1,80 @@
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+
+.clearfix:after{
+    content: "020"; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;  
+}
+  
+.clearfix {
+    /* 触发 hasLayout */ 
+    zoom: 1; 
+}
+
+header  > ul{
+  float: right;
+  height: 100px;
+  line-height: 100px;
+  font-size: 16px;
+  color: #999999;
+}
+
+header  > ul > li{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+header  > ul > li > a{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: #999999;
+    border-radius: 20px;
+}
+
+header  > ul > li > a + i{
+    color: #aaaaaa;
+    font-style: normal;
+    display: inline;
+}
+
+header  > ul > li > a.active,
+header  > ul > li > a:hover{
+    background: #f4afb0;
+    color: #ffffff;
+
+}
+
+body > img{
+    display: block;
+    margin: 0px;
+    width: 100%;
+}
+
+footer{
+    padding: 10px 0px;
+    background-color: #777777;
+    color: #FFFFFF; 
+    line-height: 30px;
+}
+footer >  div{
+  width: 585px;
+  margin: 0px auto;
+}
+footer >  div > span + span{
+  float: right;
+}
+footer img{
+  padding-right: 17px;
+  vertical-align: text-bottom;
+}

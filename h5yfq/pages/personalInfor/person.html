@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>基本信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="../../js/resetpage.js"></script>
+  </head>
+
+  <body>
+  	<header>
+    <a href="javascript:;" class="goBack"></a>
+    <span>基本信息</span>
+    </header>
+    <div class="formSec"></div>
+
+    <!--弹出框1-->
+		<div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/personalInfor/getInfor.js"></script>
+    
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="form-template" type="text/x-handlebars-template">
+      <form action="" class="formBox" id="messForm">
+        <div class="form-group">
+          <label>居住地址</label>
+          <div>{{adPrCa}}{{adCiCa}}{{adArCa}}</div>
+        </div>
+        <div class="form-group">
+          <label>详细地址</label>
+          <div>{{adDeOt}}</div>
+        </div>
+        <div class="form-group">
+          <label>学历水平</label>
+          <div>{{eduCa}}</div>
+        </div>
+        
+        <div class="form-group">
+          <label>婚姻状况</label>
+          <div>{{maStCa}}</div>
+        </div>
+        <div class="form-group">
+          <label>有无子女</label>
+          <div>{{isHas haChildYn}}</div>
+        </div>
+      </form>
+  </script>
+</html>

@@ -1,0 +1,171 @@
+.upPart{
+	opacity: 0.7;
+font-size: 28px;
+color: #6E6667;
+letter-spacing: 1px;
+text-align: center;
+line-height: 40px;
+padding: 50px 0px 43px 0px;
+}
+.topShadow{
+	text-align: center;
+	font-size: 0px;
+}
+
+.form-group{
+	padding-left:75px;
+	padding-top: 2px;
+  border: 2px solid rgba(43,56,87,0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  
+}
+.form-group > div{
+	/*height:108px;*/
+	/*padding-bottom: 10px;*/
+}
+.form-group > div >  input{
+	font-size: 30px;
+	width: 370px;
+	float: left;
+	border:none;
+	line-height: 90px;
+}
+.user-icon{
+    background: url("../img/icon/register/IconPhone@2x.png") center left no-repeat;
+    background-position-x: 22px;
+}
+.password-icon{
+	background: url("../img/icon/register/iconPasswordFull@2x.png") center left no-repeat;
+  background-position-x: 22px;
+  
+}
+.shortMessage-icon{
+	background: url("../img/icon/register/IconChat@2x.png") center left no-repeat;
+  background-position-x: 22px;
+  
+}
+.addPeople-icon{
+	background: url("../img/icon/register/IconPeople@2x.png") center left no-repeat;
+}
+.user-name-icon{
+	background: url("../img/login/iconNameFull.png") center left no-repeat;
+	
+}
+/*a.tel-clear{
+	width: 50px;
+	height:90px;
+	float: right;
+	background: url("../img/icon/register/iconClose@2x.png") center  no-repeat;
+}
+a.password-hide{
+	width: 40px;
+	height:90px;
+	float: right;
+	background: url("../img/icon/register/diseye.png")no-repeat;
+	background-position: center;
+}
+a.password-show{
+	width: 40px;
+	height:110px;
+	float: right;
+	background: url("../img/icon/register/eye.png") no-repeat;
+	background-position: center;
+}*/
+button.shortMessage{
+	float: right;
+	font-size: 28px;
+	border: none;
+	background: #fff;
+	padding: 0px;
+	line-height: 90px;
+	text-decoration: none;
+	padding-right: 25px;
+}
+.form-group.shortMessage-icon >div> input{
+	width: 230px;
+}
+/*.shortMessage-icon > div:before{
+	content: "";
+	width: 1px;
+	border-right: 1px solid #c7c7c7;
+	position: relative;
+	top: 32px;
+}*/
+.form-btn-register{
+	width: 100%;
+	text-align: center;
+	margin:auto;
+	margin-top: 90px;
+	margin-bottom: 60px;
+}
+.btn-big-blue{
+	width: 100%;
+	line-height:100px;
+	color: #352A2B;
+	font-size: 36px;
+	background-image: linear-gradient(-180deg, #FFD700 0%, #FAB800 100%);
+box-shadow: 0 22px 40px 0 rgba(192,102,30,0.36);
+border-radius: 10px;
+}
+.agree-register{
+	text-align: left;
+	font-size: 28px;
+	margin-top: 30px;
+}
+.agree-register em{
+	color: #999999;
+	padding-left: 10px;
+}
+.a-red{
+	color:#E17646;
+}
+.form-group >div> input:focus,.form-group >div> input:hover,.form-group >div> input:visited,.form-group >div> input:active,.form-group >div> input{
+	border:none;
+}
+
+/*第二版注册*/
+
+.form-sec > form{
+	margin: 0px 78px;
+	background-color: #FFFFFF;
+	padding: 60px 37px 0px 37px;
+	border-radius: 20px;
+	box-shadow: 0 22px 40px 0 rgba(227,143,66,0.21);
+	overflow: hidden;
+}
+/*.form-sec .inputText{
+	margin-top: 40px;
+	font-size: 25px;
+	color: #E6E6E6;
+	display: none;
+}*/
+#register-form{
+	/*height: 669px;
+	margin-top: -292px;*/
+}
+#forget-pwd-form{
+/*	margin-top: -292px;
+	height: 540px;*/
+}
+
+.picCode{
+	margin-top: 20px;
+}
+.picCode > div:before{
+	content: '';
+	width: 0px;
+	border: none;
+}
+
+
+footer{
+	padding: 0px 78px 54px 78px;
+	box-sizing: border-box;
+}
+
+/*登录*/
+.user_icon_sec{
+	text-align: center;
+	padding-bottom: 45px;
+}

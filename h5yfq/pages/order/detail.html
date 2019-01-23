@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>订单详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/order/order.css" />
+    
+    <script type="text/javascript" src="../../js/resetpage.js"></script>
+
+  </head>
+
+  <body>
+  	
+    <section class="" id="html-section"></section>
+    
+		<div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+		
+		<div class="mask">
+		  <div class="content">
+		    <p class="inform">确认收货吗?</p>
+		    <div class="cancel">取消</div>
+		    <div class="sure" key="">确定</div>
+		  </div>
+		</div>
+    <script src="../../js/lib/zepto.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/order/detail.js"></script>
+    
+    <script id="content-template" type="text/x-handlebars-template">
+    	{{#if (neq myOrderDto.order.orderState '1')}}
+    	<dl class="good-Status bg-color clearBoth">
+      	<dt><img src="../../img/icon/dengdaishouhuo.png"/>{{comTrail myOrderDto.order.orderState}}</dt>
+      	<dd>{{myOrderDto.order.logisticsName}}</dd>
+      </dl>
+      {{#if (eq myOrderDto.order.orderState '4')}}
+      <a class="trail-link">
+      	<dl class="goods-trail clearBoth">
+      	  <dt><img src="../../img/icon/wuliu.png" />快递正在送达</dt>
+      	  <dd>物流详情</dd>
+      	</dl>
+      </a>
+      {{else if (eq myOrderDto.order.orderState '5')}}
+      <a class="trail-link">
+      	<dl class="goods-trail clearBoth">
+      	  <dt><img src="../../img/icon/wuliu.png" />快递已送达</dt>
+      	  <dd>物流详情</dd>
+      	</dl>
+      </a>
+      {{/if}}
+      {{/if}}
+    	<ul class="address-list">
+      	<li>
+      		<a class="toAddressList">
+      		  <span>{{myOrderDto.order.name}}</span><span>{{myOrderDto.order.mobile}}</span>
+      		  <p>{{myOrderDto.order.addressAll}} {{myOrderDto.order.addressInfo}}</p>
+      	  </a>
+      	</li>
+      </ul>
+      
+      <div class="orderDetail">
+      	<div class="clearBoth border-bottom">
+      		<img class="fl product-logo" data-url="{{myOrderDto.order.orderProductList.[0].productLeadLittle}}"/>
+      		<div class="fr">
+      			<h4>{{myOrderDto.order.orderProductList.[0].productName}}</h4>
+      			<label class="font24">{{myOrderDto.order.orderProductList.[0].specInfo}}</label>
+      			<span class="main-color font25">￥{{myOrderDto.order.orderProductList.[0].moneyAmount}}</span>
+      			{{#if findRepayLoanResponse.userCouponDetail.type}}
+      			<span class="main-color font25">已使用{{judgeType findRepayLoanResponse.userCouponDetail.type}}</span>
+      			{{/if}}
+      		</div>
+      	</div>
+      	<dl>
+				  <dt>订单编号</dt>
+				  <dd>{{myOrderDto.order.orderSn}}</dd>
+				</dl>
+				<dl>
+				  <dt>下单时间</dt>
+				  <dd>{{myOrderDto.order.payTime}}</dd>
+				</dl>
+				
+				<dl>
+				  <dt>支付方式</dt>
+				  <dd class="main-color payText">{{myOrderDto.order.paymentName}}</dd>
+				</dl>
+				{{#if (gt myOrderDto.order.orderState '3')}}
+				<dl>
+				  <dt>配送方式</dt>
+				  <dd>{{myOrderDto.order.logisticsName}}</dd>
+				</dl>
+				{{/if}}
+				<dl class="border-bottom-no">
+				  <dt>支付金额</dt>
+				  {{#if myOrderDto.order.periodPayMoney}}
+				  <dd>
+				  	<span class="second_color">{{myOrderDto.order.payMoney}}首付</span> + 
+				  	￥{{myOrderDto.order.periodPayMoney}} 
+				  	× <span class="main-color">{{myOrderDto.order.periods}}期</span>
+				  </dd>
+				  
+				  {{else}}
+				  <dd>￥{{myOrderDto.order.moneyProduct}}</dd>
+				  {{/if}}
+				  
+				</dl>
+				
+				<dl>
+				  <dt>运费</dt>
+				  <dd>+￥0.0</dd>
+				</dl>
+				<div class="order-opera">
+				  <a id="buyAgain" data-pid="{{myOrderDto.order.orderProductList.[0].productId}}">再次购买</a>
+				  {{#if myOrderDto.order.periods}}
+				  <a class="btn-color" id="repayPlan">还款计划</a>
+				  {{/if}}
+				  {{#if (eq myOrderDto.order.orderState '4')}}
+				  <a class="btn-bgColor" id="ensureGet">确认收货</a>
+				  {{/if}}
+				  {{#if (eq myOrderDto.order.orderState '1')}}
+				  <a class="btn-bgColor" id="goPay" data-orderid = "{{myOrderDto.order.id}}" href="javascript:;">去付款</a>
+				  {{/if}}
+				</div>
+      </div>
+    </script>
+  </body>
+
+</html>

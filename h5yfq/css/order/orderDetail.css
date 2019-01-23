@@ -1,0 +1,72 @@
+body{
+  background-color: #f7f7f7;
+}
+.pro{
+  height:220px;
+  width:750px;
+  padding:15px 25px 15px 30px;
+  border-bottom:1px solid #e1e1e1;
+  background-color: #fff
+}
+.proLeft{
+  width: 190px;
+  height: 190px;
+}
+.proRight{
+  width:483px;
+  padding-top:30px;
+  font-size:25px;
+  line-height:45px;
+  color:#414141;
+}
+.list1{
+  height:139px;
+  background-color: #fff
+}
+.list1 div{
+  margin-top:33px;
+  width:250px;
+  text-align: center;
+}
+.list1 div span{
+  display: block;
+}
+.sTit{
+  color:#afafaf;
+  margin-bottom:10px;
+  font-size:28px;
+}
+.sNum{
+  color:#606060;
+  font-size:32px;
+}
+.sTotal{
+  color:#ffbc00;
+  font-size:32px;
+}
+.title{
+ height:84px;
+ line-height:84px;
+ background-color: #fff;
+ margin-top:22px;
+}
+.title p{
+  width:250px;
+  text-align:center;
+}
+.payList li{
+  height:98px;
+  border-top:1px solid #e1e1e1;
+  background-color: #fff;
+}
+.payList li span{
+  display: block;
+  float:left;
+  text-align: center;
+  width: 250px;
+  line-height:98px;
+  color:#6a6a6a;
+}
+.payed{
+  color:#a4a4a4 !important;
+}

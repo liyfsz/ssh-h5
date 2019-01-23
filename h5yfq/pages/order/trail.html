@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单跟踪</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/order/trail.css"/>
+    
+    <script src="../../js/common/resetpage.js"></script>
+	</head>
+	<body>
+		<section id="html-section">
+			
+		</section>
+		
+		<div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+		
+		<script src="../../js/lib/zepto.min.js"></script>
+		<script src="../../js/lib/handlebars/handlebars.js"></script>
+		<script src="../../js/lib/handlebars/handleMethod.js"></script>
+		
+		<script src="../../js/common/tools.js"></script>
+		<script src="../../js/order/trail.js"></script>
+
+		
+		<script id="content-template" type="text/x-handlebars-template">
+			<div class="bg-content-white">
+			  <div class="infor">
+			    <p>运单号：{{myOrderDto.order.logisticsNumber}}</p>
+			    <p>国内承运人：{{myOrderDto.order.logisticsName}}</p>
+			    <p>国内承运人电话：<span class="main-color">暂无</span></p>
+			  </div>
+			</div>
+			
+			<div class="bg-content-white progress">
+				<div class="goodsAdress">
+					<p>[收货地址]{{myOrderDto.order.addressAll}} {{myOrderDto.order.addressInfo}}</p>
+				</div>
+			  <ul class="trail-text">
+			  	{{#each myOrderDto.orderLogList}}
+			    <li class="clearBoth">
+			    	<span>
+			    		<div>{{isYestoday createTime}}</div>
+			    		<div>{{formatTime createTime}}</div>
+			    	</span>
+			    	<i class=""></i>
+			    	<span class="text">
+			      <div>{{content}}</div>
+			    	</span>
+			    </li>
+			    {{/each}}
+			  </ul>
+			</div>
+		</script>
+	</body>
+</html>
+
