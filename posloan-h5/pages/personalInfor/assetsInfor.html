@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>车辆房产信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="person.html" class="goBack selfHref"></a>
+      <span>车辆房产信息</span>
+    </header>
+    <section id="html-section">
+      
+    </section>
+
+    <!--弹出框1-->
+		<div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    
+    
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/common/mask.js"></script>
+    <script src="../../js/common/validate.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/lib/distpicker/distpicker.data.js"></script>
+    <script src="../../js/lib/distpicker/distpicker.js"></script>
+    <script src="../../js/lib/distpicker/city-picker.min.js"></script>
+    <script src="../../js/personalInfor/assetsInfor.js"></script>
+    
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="content-template" type="text/x-handlebars-template">
+    <form action="" class="formBox" id="messForm">
+      <div class="form-group-box">
+        <h6>房产信息</h6>
+        <div class="form-group">
+          <label>是否有房产</label>
+          <span class="check-box">
+            <input type="checkbox" name="isHouse" value="1" id="isHouse" {{#if (eq isHouse '1')}} checked="checked"{{/if}}/>
+            <label for="isHouse"></label>
+          </span>
+        </div>
+        <div class="form-group relate {{#if (or (eq isHouse '0') (eq isHouse null))}}dis-none{{/if}}">
+          <label>房产地址</label>
+          <input placeholder="请输入" type="text" name="houseAddress" value="{{houseAddress}}" id="fcdz" class="checkChar"/>
+        </div>
+      </div>
+      <div class="form-group-box">
+        <h6>车辆信息</h6>
+        <div class="form-group">
+          <label>是否有车辆</label>
+          <span class="check-box">
+            <input type="checkbox" name="isCar" value="1" id="isCar" {{#if (eq isCar '1')}} checked="checked"{{/if}}/>
+            <label for="isCar"></label>
+          </span>
+        </div>
+        <div class="form-group relate {{#if (or (eq isCar '0') (eq isCar null))}}dis-none{{/if}}">
+          <label>车辆型号</label>
+          <input placeholder="请输入" type="text" name="carType" value="{{carType}}" id="clxh" class="checkChar"/>
+        </div>
+        <div class="form-group relate {{#if (or (eq isCar '0') (eq isCar null))}}dis-none{{/if}}">
+          <label>车牌号</label>
+          <input placeholder="请输入" type="text" name="carNo" value="{{carNo}}" id="cph" class="checkChar"/>
+        </div>
+      </div>
+    </form>
+    <div class="btnDiv">
+      <button id="subForm">下一步</button>
+    </div>
+  </script>
+</html>

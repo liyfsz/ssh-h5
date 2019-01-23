@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>上传身份证照片</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js"></script>
+    
+  </head>
+
+  <body>
+  	<header>
+    <a href="loanIntention.html" class="goBack selfHref"></a>
+    <span>上传身份证照片</span>
+  </header>
+    <div class="formSec">
+      <form class="formBox" id="messForm">
+        <div class="picDiv">
+          <label class="rigFace" for="frontIDCard">
+            <span>
+              <img src="../../img/icon/photo_success.png" /> 拍摄成功
+            </span>
+          </label>
+          <input type="file" class="uploadPic" id="frontIDCard" accept="image/*" />
+          <input type="hidden" name="frontImg" id="frontImg"/>
+        </div>
+        <div class="picDiv">
+          <label class="backFace" for="negativeIDCard">
+            <span>
+              <img src="../../img/icon/photo_success.png" /> 拍摄成功
+            </span>
+          </label>
+          <input type="file" class="uploadPic" id="negativeIDCard" accept="image/*" />
+          <input type="hidden" name="backImg" id="backImg"/>
+        </div>
+      </form>
+      <div class="btnDiv">
+        <button id="submitIdCard">提交</button>
+      </div>
+    </div>
+    
+    <!--弹出框1-->
+    <div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/lib/mobileBUGFix.mini.js"></script>
+    <script src="../../js/lib/MegaPixImage.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/common/mask.js"></script>
+    <script src="../../js/common/validate.js"></script>
+    <script src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/personalInfor/idcard.js"></script>
+  </body>
+
+</html>

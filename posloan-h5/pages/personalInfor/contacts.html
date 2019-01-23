@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>联系人信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+  </head>
+
+  <body>
+  	<header>
+      <a href="assetsInfor.html" class="goBack selfHref"></a>
+    	<span>添加联系人</span>
+    </header>
+    
+    <section id="html-section">
+      
+    </section>
+    <!--隐藏的类数据字典-->
+    <div class="modalBox">
+      <div class="maskBg"></div>
+      <div class="modalCon modalCon1" data-link="relate1">
+        <ul class="">
+          <li data-code="01" data-text="子女">子女</li>
+          <li data-code="02" data-text="配偶">配偶</li>
+          <li data-code="03" data-text="父母">父母</li>
+        </ul>
+      </div>
+      <div class="modalCon modalCon2" data-link="relate2">
+        <ul class="">
+          <li data-code="04" data-text="朋友">朋友</li>
+          <li data-code="05" data-text="同事">同事</li>
+          <li data-code="06" data-text="亲属">亲属</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!--弹出框1-->
+		<div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+		
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/common/mask.js"></script>
+    <script src="../../js/common/validate.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/personalInfor/contacts.js"></script>
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="content-template" type="text/x-handlebars-template">
+    <form action="" class="formBox" id="messForm1">
+        <div class="form-group-box martop20">
+        <div class="form-group">
+          <label>与本人关系</label>
+          <span class="togRelate relate1" data-con="modalCon1">{{judgeRelation this.[0].relationShip}}</span>
+          <input type="hidden" name="" value="" class="dicText"/>
+          <input type="hidden" name="relationShip" value="{{this.[0].relationShip}}" class="dicCode" id="lRelationship"/>
+        </div>
+        <div class="form-group">
+          <label>姓名</label>
+          <input placeholder="请输入真实姓名" type="text" name="linkName" value="{{this.[0].linkName}}" id="lName" class="checkChar"/>
+        </div>
+        <div class="form-group">
+          <label>身份证号码</label>
+          <input placeholder="请输入身份证号" type="text" name="idcardNo" value="{{this.[0].idcardNo}}" id="idcardNo"/>
+        </div>
+        <div class="form-group">
+          <label>手机号</label>
+          <input placeholder="请输入手机号" type="tel" name="linkTel" value="{{this.[0].linkTel}}" id="lPhone"/>
+        </div>
+        </div>
+     </form>
+     <form action="" class="formBox" id="messForm2">
+        <div class="form-group-box martop20">
+        <div class="form-group">
+          <label>与本人关系</label>
+          <span class="togRelate relate2" data-con="modalCon2">{{judgeRelation this.[1].relationShip}}</span>
+          <input type="hidden" name="" class="dicText" />
+          <input type="hidden" name="relationShip" value="{{this.[1].relationShip}}" class="dicCode" id="fRelationship"/>
+        </div>
+        <div class="form-group">
+          <label>姓名</label>
+          <input placeholder="请输入真实姓名" type="text" name="linkName" value="{{this.[1].linkName}}" id="fName" class="checkChar"/>
+        </div>
+        <div class="form-group wholeWidth">
+          <label>手机号</label>
+          <input placeholder="请输入手机号" type="tel" name="linkTel" value="{{this.[1].linkTel}}" id="fPhone"/>
+        </div>
+        </div>
+      </form>
+      <div class="btnDiv" style="padding-bottom:300px;">
+        <button id="subContacts">下一步</button>
+      </div>
+  </script>
+</html>

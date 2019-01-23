@@ -1,0 +1,35 @@
+header{
+  background-image: linear-gradient(to right, #ffaf86 0%, #ff8c80 100%);
+}
+header span{
+  color: #FFFFFF;
+}
+header a.goBack{
+  background: url(../../img/direct/back_white.png) center no-repeat;
+}
+.partUp{
+  padding-top: 70px;
+  color: #FFFFFF;
+  font-size: 28px;
+  text-align: center;
+  height: 294px;
+  background:url(../../img/bg/bg_money.png) center no-repeat;
+}
+.partUp h2{
+  font-size: 66px;
+  padding-bottom: 48px;
+}
+.service{
+  font-size: 22px;
+  padding-bottom: 28px;
+  color: #999;
+}
+
+.serviceTips{
+  margin-bottom: 24px;
+}
+
+.tips{
+  margin: 20px 39px 0px;
+}
+

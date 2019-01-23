@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>还款详情</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <link rel="stylesheet" href="../../css/mine/repay.css"/>
+    <script type="text/javascript" src="../../js/common/resetpage.js" ></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="javascript:window.history.go(-1);" class="goBack selfHref"></a>
+      <span>还款详情</span>
+      <!--<a href="" class="fr">合同详情</a>-->
+    </header>
+    
+    <section id="html-section">
+      
+    </section>
+    
+    <!--弹出框1-->
+		<div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+		
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/mine/repayInfor.js"></script>
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="content-template" type="text/x-handlebars-template">
+    <div class="bg-content-white repayAmount">
+      <div>本期应还金额</div>
+      <h2>￥{{formatmoney total 2}}</h2>
+      <form action="" class="formDetail" id="messForm">
+        <div class="form-group-box">
+          {{#if (gt payamount '0')}}
+          <div class="form-group">
+            <label>已还金额</label>
+            <div>{{formatmoney payamount 2}}</div>
+          </div>
+          {{/if}}
+          <div class="form-group">
+            <label>应还本金</label>
+            <div>{{formatmoney amount 2}}</div>
+          </div>
+          <div class="form-group">
+            <label>应还利息</label>
+            <div>{{formatmoney interest 2}}</div>
+          </div>
+          {{#if (neq overdueDay '0')}}
+          {{#if (gt penalty '0')}}
+          <div class="form-group">
+            <label>违约金</label>
+            <div>{{formatmoney penalty 2}}</div>
+          </div>
+          {{/if}}
+          {{#if (gt overdueFee '0')}}
+          <div class="form-group">
+            <label>逾期费</label>
+            <div>{{formatmoney overdueFee 2}}</div>
+          </div>
+          {{/if}}
+          {{#if (gt overdueRemit '0')}}
+          <div class="form-group">
+            <label>逾期罚息减免</label>
+            <div>{{formatmoney overdueRemit 2}}</div>
+          </div>
+          {{/if}}
+          {{/if}}
+          {{#if (gt overdueDay '0')}}
+          <div class="form-group">
+            <label>逾期天数</label>
+            <div>{{overdueDay}}天</div>
+          </div>
+          {{/if}}
+          {{#if (gt fee '0')}}
+          <div class="form-group wholeWidth">
+            <label>手续费</label>
+            <div>{{formatmoney fee 2}}</div>
+          </div>
+          {{/if}}
+          {{#if (eq fee 'null')}}
+          <div class="form-group wholeWidth">
+            <label>应还日期</label>
+            <div>{{date}}</div>
+          </div>
+          {{/if}}
+        </div>
+      </form>
+    </div>
+    <div class="btnDiv">
+      <button id="subContacts">去还款</button>
+    </div>
+  </script>
+</html>

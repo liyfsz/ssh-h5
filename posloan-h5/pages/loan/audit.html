@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/mine/borrow.css"/>
+    <link rel="stylesheet" href="../../css/loan/audit.css"/>
+    <script type="text/javascript" src="../../js/common/resetpage.js"></script>
+  </head>
+
+  <body>
+  <div class="container">
+      <header>
+        <a href="javascript:void(0)" class="goBack"></a>
+        <span>首页</span>
+      </header>
+    <section id="html-section"></section>
+  </div>
+    <footer>
+      <div class="service">
+        <div class="serviceTips">客服工作时间：工作日9:00-17:30</div>
+        <label>人工客服电话: <a href="tel:010-82205410" class="disableHref">010-82205410</a> / <a href="tel:400-668-6689" class="disableHref">400-668-6689</a></label>
+      </div>
+      <div class="footer">
+        <a href="javascript:void(0);" class="a1 current">首页</a>
+        <a href="../mine/index.html" class="a2">我的</a>
+      </div>
+    </footer>
+  	
+    
+    <!--弹出框1-->
+    <div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/loan/audit.js"></script>
+    <script src="../../js/common/countdown.js"></script>
+    <script id="content-template" type="text/x-handlebars-template">
+      <div class="partUp">
+        {{#if (eq status "03") }}
+        <h2>审核中</h2>
+        <h6>借款金额(元)</h6>
+        {{else if (eq status "04") }}
+        <h2>未通过</h2>
+        <h6>借款金额(元)</h6>
+        {{else if (eq status "05") }}
+        <h6 id="textInfor">可借金额(元)</h6>
+        <h2 id="loanMoney">{{formatmoney verifyQuota 2}}</h2>
+        {{else if (and (or (eq status '06') (eq status '07'))) }}
+        <h6 id="textInfor">借款金额(元)</h6>
+        <h2 id="loanMoney">{{formatmoney verifyQuota 2}}</h2>
+        {{else }}
+        <h2 id="loanMoney">未取到值</h2>
+        {{/if}}
+      </div>
+      <div class="">
+        <div class="infor">
+          <table>
+            <thead>
+              <tr>
+                <th>月利率</th>
+                <th></th>
+                <th>借款周期</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#if (and (or (eq status '03') (eq status '04')))}}
+              <tr><td>--</td><td></td><td>--</td</tr>
+            {{else }}
+               <tr><td id="lendRate"></td><td></td><td id="lendPeriod"></td</tr>
+            {{/if}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {{#if (eq status "04") }}
+      <div class="tips" hidden>
+        <dl>
+          <dt>温馨提示：</dt>
+          <dd>借款审核不通过，0天后才能再借款</dd>
+        </dl>
+      </div>
+      {{/if}}
+      <div class="btnDiv">
+        {{#if (eq status "04")}}
+        <button id="subAuditFailed" disabled="disabled" hidden>未通过</button>
+        {{else if (eq status "03")}}
+        <button id="subAudit" disabled="disabled">审核中</button>
+        {{else if (eq status "05")}}
+        <button id="subAuditSuccess">立即借款</button>
+        <div class="oneRowTip" id="auditTips">
+        </div>
+        {{else if (eq status "06")}}
+        <button id="waitLoan" disabled="disabled">等待放款</button>
+        {{else if (eq status "07")}}
+        <button id="goReapy">去还款</button>
+        {{/if}}
+      </div>
+    </script>
+  </body>
+
+</html>

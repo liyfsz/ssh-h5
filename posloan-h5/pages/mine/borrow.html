@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的借款</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/mine/borrow.css"/>
+    
+    <script src="../../js/common/resetpage.js"></script>
+	</head>
+	<body>
+		<header>
+      <a href="index.html" class="goBack selfHref"></a>
+      <span>我的借款</span>
+    </header>
+		<section id="html-section">
+			
+		</section>
+		
+		<div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+		
+		<script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+		<script src="../../js/lib/handlebars/handlebars.js"></script>
+		<script src="../../js/lib/handlebars/handleMethod.js"></script>
+		<script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+		<script src="../../js/common/tools.js"></script>
+		<script src="../../js/mine/borrow.js"></script>
+		<script src="../../js/common/countdown.js"></script>
+		
+		<script id="content-template" type="text/x-handlebars-template">
+			<div class="">
+			  <div class="infor">
+			    <table>
+			    	<thead>
+			    		<tr>
+			    		  <th>月利率</th>
+                          {{#if (and (or (eq status '03') (eq status '04')))}}
+                          <th>期望借款金额(元)</th>
+                          {{else }}
+                          <th>借款金额(元)</th>
+                          {{/if}}
+			    		  <th>借款周期</th>
+			    		</tr>
+			    	</thead>
+			    	<tbody>
+                     {{#if (and (or (eq status '03') (eq status '04')))}}
+                       <tr><td>--</td><td>{{formatmoney verifyQuota 2}}</td><td>--</td</tr>
+                     {{else }}
+                       <tr><td id="lendRate"></td><td id="verifyQuota"></td><td id="lendPeriod"></td</tr>
+                     {{/if}}
+			    	</tbody>
+			    </table>
+			  </div>
+			</div>
+			
+			<div class="bg-content-white progress">
+        <ul class="trail-text">
+          <li class="clearBoth">
+            <i class="finish"></i>
+            <span class="text">提交申请
+        			  <div>{{applyDate}}</div>
+        			</span>
+          </li>
+          <li class="clearBoth">
+            <i class="{{#if (eq status '06')}}finish{{else if (eq status '07')}}finish{{else if (eq status '08')}}finish{{else}}current{{/if}}"></i>
+            {{#if (eq status '04')}}
+            <span class="text">未通过 <b>您的综合评分未达到标准</b>
+            {{else if (eq status '03')}}
+            <span class="text">审核中
+            {{else if (eq status '05')}}
+            <span class="text">已通过 (待借款)
+            {{else if (eq status '06')}}
+            <span class="text">已通过
+            {{else if (eq status '07')}}
+            <span class="text">已通过
+            {{else if (eq status '08')}}
+            <span class="text">已通过
+            {{/if}}
+            <div>{{verifyDate}}</div>
+            </span>
+          </li>
+          <li class="clearBoth">
+            <i class="{{#if (neq status '06')}}finish{{else}}current{{/if}}"></i>
+            {{#if (and (or (eq status '07') (eq status '08')))}}
+                <span class="text">放款成功
+                <div>{{clearDate}}</div>
+                </span>
+            {{else}}
+            <span class="text">等待放款</span>
+            {{/if}}
+          </li>
+          {{#if (and (or (eq status '07') (eq status '08')))}}
+          <li class="clearBoth">
+            <i class="current"></i>
+            {{#if (eq status '07')}}
+                    <span class="text">未还清</span>
+		    {{else if (eq status '08')}}
+              <span class="text">已还清
+                 <div>{{finishDate}}</div>
+              </span>
+            {{/if}}
+          </li>
+          {{/if}}
+        </ul>
+			</div>
+			{{#if (eq status '03')}}
+			<div class="tips">
+			  <dl>
+			    <dt>温馨提示:</dt>
+			    <dd>
+			      请您耐心等待，审核结果将在1-3个工作日反馈给你，请密切关注短信消息
+			    </dd>
+			  </dl>
+			</div>
+			{{else if (eq status '04')}}
+			<div class="tips" hidden>
+        <dl>
+          <dt>温馨提示:</dt>
+          <dd>
+            借款审核不通过，0天后才能再次借款
+          </dd>
+        </dl>
+      </div>
+			<div class="btnDiv" hidden>
+				<button id="loanFailed" disabled="disabled" hidden>审核未通过</button>
+			</div>
+			{{else if (eq status '05')}}
+			<div class="btnDiv">
+        <button id="qukLoan" disabled="disabled">立即借款</button>
+        <dl>
+          <dd id="borrowTip"></dd>
+        </dl>
+      </div>
+      {{else if (eq status '04')}}
+      <div class="tips" hidden>
+        <dl>
+          <dt>温馨提示:</dt>
+          <dd>
+            审核未通过，请您0个工作日后再借款。
+          </dd>
+        </dl>
+      </div>
+      {{else if (eq status '06')}}
+      <div class="tips">
+        <dl>
+          <dt>温馨提示:</dt>
+          <dd>
+            请您耐心等待，放款结果1-3个工作日反馈给您，请密切关注推送消息和短信通知
+          </dd>
+        </dl>
+      </div>
+      {{else if (eq status '07')}}
+      <div class="btnDiv">
+        <button id="gorepay">去还款</button>
+      </div>
+      {{/if}}
+		</script>
+	</body>
+</html>
+

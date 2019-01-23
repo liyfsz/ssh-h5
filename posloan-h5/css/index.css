@@ -1,0 +1,84 @@
+header{
+  background-image: linear-gradient(to right, #ffaf86 0%, #ff8c80 100%);
+}
+header span{
+  color: #FFFFFF;
+}
+header a.goBack{
+  background: url(../img/direct/back_white.png) center no-repeat;
+}
+.bodyBg{
+	background: #ffb387;
+	position: relative;
+	height: 100%;
+}
+
+.bodyBg .operate-box{
+	width: 100%;
+	position: absolute;
+	bottom: 135px;
+}
+.bodyBg .operate-box button{
+	display: block;
+	width: 600px;
+	background: #ff6e54;
+	margin: 0 auto;
+	font-size: 34px;
+	color: #FFFFFF;
+	line-height: 80px;
+	border-radius: 15px;
+	border: none;
+}
+.bodyBg .operate-box button[disabled]{
+  background-color: #CCCCCC;
+}
+.bodyBg .operate-box a{
+	color: #631609;
+}
+
+.service{
+  position: absolute;
+  bottom: 175px;
+  padding-left: 70px;
+}
+
+.serviceTips{
+  background: url(../img/icon/service.png) center left no-repeat;
+  padding-left: 60px;
+  font-size: 24px;
+  color: rgba(99,22,9,1);
+  margin-bottom: 24px;
+}
+
+.service p,.service p a{
+  font-size: 32px;
+  color: rgba(99,22,9,1);
+}
+
+.timeTips{
+  padding-left: 90px;
+  font-size: 24px;
+  color: rgba(99,22,9,1);
+  margin-top:100px;
+}
+
+/*详情页结束*/
+.check-box-row{
+	font-size: 20px;
+	color: #885f57;
+	margin-left: 140px;
+	margin-top: 20px;
+}
+.check-box-row input[type=checkbox]{
+  display: none;
+}
+.check-box-row input[type=checkbox]+label{
+  display: block;
+  -webkit-appearance: none;
+  width: auto;
+  background: url(../img/btn/border_normal_index.png) center left no-repeat;
+  padding-left: 42px;
+}
+.check-box-row input[type=checkbox]:checked+label{
+  background: url(../img/btn/border_selected_index.png) center left no-repeat;
+}

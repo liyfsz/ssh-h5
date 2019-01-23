@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>个人信息</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    
+    <link rel="stylesheet" href="../../css/common/jquery-weui.min.css" />
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/common/provCityDis.css"/>
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <script type="text/javascript" src="../../js/common/resetpage.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <a href="javascript:void(0)" class="goBack"></a>
+      <span>个人信息</span>
+    </header>
+    <section id="html-section">
+      
+    </section>
+
+    <!--弹出框1-->
+		<div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    
+    <!--隐藏的类数据字典-->
+    <div class="modalBox">
+      <div class="maskBg"></div>
+      <div class="modalCon modalCon1" data-link="relate1">
+        <ul class="marriage">
+          <li data-code="0" data-text="已婚">已婚</li>
+          <li data-code="1" data-text="未婚">未婚</li>
+          <li data-code="2" data-text="离异">离异</li>
+        </ul>
+      </div>
+    </div>
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/lib/distpicker/jquery-weui.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/common/mask.js"></script>
+    <script src="../../js/common/validate.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/lib/distpicker/distpicker.data.js"></script>
+    <script src="../../js/lib/distpicker/distpicker.js"></script>
+    <script src="../../js/lib/distpicker/city-picker.min.js"></script>
+    <script src="../../js/lib/distpicker/city-picker-part.min.js"></script>
+    <script src="../../js/personalInfor/person.js"></script>
+  </body>
+  
+  <!--handlebars取数据-->
+  <script id="content-template" type="text/x-handlebars-template">
+    <form action="" class="formBox" id="messForm">
+      <div class="form-group-box martop20">
+        <div class="form-group">
+          <label>公司名称</label>
+          <input placeholder="请输入" type="text" name="companyName" value="{{companyName}}" id="comName" class="checkChar"/>
+        </div>
+        <div class="form-group middLong">
+          <label>最近12个开票销售总额(万元)</label>
+          <input placeholder="没有请输入0" type="text" name="invoiceSalesAmount" value="{{invoiceSalesAmount}}" id="invoiceSalesAmount" onpaste="return false" onkeyup="this.value=this.value.replace(/^(\d*\.?\d{0,2}).*/,'$1')"/>
+        </div>
+        <div class="form-group middLong">
+          <label>企业现有借款总额(万元)</label>
+          <input placeholder="没有请输入0" type="text" name="enterpriseLendAmount" value="{{enterpriseLendAmount}}" id="enterpriseLendAmount" onpaste="return false" onkeyup="this.value=this.value.replace(/^(\d*\.?\d{0,2}).*/,'$1')"/>
+        </div>
+        <div class="form-group">
+          <label>手机号码</label>
+          <input placeholder="请输入手机号" type="tel" name="mobile" value="{{mobile}}" id="telephone"/>
+        </div>
+        <div class="form-group">
+          <label>微信账号</label>
+          <input placeholder="请输入" type="text" name="weixinAccount" value="{{weixinAccount}}" id="wechatNum" class="checkChar"/>
+        </div>
+        <div class="form-group">
+          <label>婚姻状况</label>
+          <span class="togRelate relate1" data-con="modalCon1">{{judgeMar marrageInfo}}</span>
+          <input type="hidden" name="marrageInfo" value="{{marrageInfo}}" class="dicCode" id="marriage"/>
+        </div>
+        <div class="form-group middLong">
+          <label>个人现有借款总额(万元)</label>
+          <input placeholder="没有请输入0" type="text" name="persionLendAmount" value="{{persionLendAmount}}" id="persionLendAmount" onpaste="return false" onkeyup="this.value=this.value.replace(/^(\d*\.?\d{0,2}).*/,'$1')"/>
+        </div>
+        <div class="form-group middLong">
+          <label>每月应还款总额(万元)</label>
+          <input placeholder="没有请输入0" type="text" name="monthRepayAmount" value="{{monthRepayAmount}}" id="monthRepayAmount" onpaste="return false" onkeyup="this.value=this.value.replace(/^(\d*\.?\d{0,2}).*/,'$1')"/>
+        </div>
+      </div>
+      <div class="form-group-box martop20">
+        <div class="form-group">
+          <label>有无子女</label>
+          <span class="check-box">
+            <input type="checkbox" name="isChild" value="1" id="ischild" {{#if (eq isChild '1')}} checked="checked"{{/if}}/>
+            <label for="ischild"></label>
+          </span>
+        </div>
+        <div class="form-group">
+          <label>经营地是否有户籍</label>
+          <span class="check-box">
+            <input type="checkbox" name="isResidence" value="1" id="isHashuji" {{#if (eq isResidence '1')}} checked="checked"{{/if}}/>
+            <label for="isHashuji"></label>
+          </span>
+          
+        </div>
+      </div>
+      <div class="form-group-box">
+        <h6>户籍地址</h6>
+        <div class="form-group">
+          <label>所在地区</label>
+          <span id='city-picker' class="togRelate mask-no">{{hjregion}}</span>
+          <input type="hidden" id="hjregion" name="hjregion" value="{{hjregion}}"/>
+        </div>
+        <div class="form-group">
+          <label>详细地址</label>
+          <input placeholder="街道，楼牌号等" type="text"  name="residenceAddress" id="permanenDetail" value="{{residenceAddress}}" class="checkChar"/>
+        </div>
+      </div>
+      <div class="form-group-box">
+        <h6>常驻地址</h6>
+        <div class="form-group">
+          <label>所在地区</label>
+          <span id='city-picker-part' class="togRelate mask-no">{{region}}</span>
+          <input type="hidden" class="dicText" id="domicile" name="region" value="{{region}}"/>
+        </div>
+        <div class="form-group">
+          <label>详细地址</label>
+          <input placeholder="街道，楼牌号等" type="text" id="domicileDetail" name="liveAddress" value="{{liveAddress}}" class="checkChar"/>
+        </div>
+      </div>
+    </form>
+    <div class="btnDiv">
+      <button id="subForm">下一步</button>
+    </div>
+  </script>
+</html>

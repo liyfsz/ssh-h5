@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>我的还款</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/mine/repay.css"/>
+    <script src="../../js/common/resetpage.js"></script>
+	</head>
+	<body>
+		<header>
+      <a href="index.html" class="goBack selfHref"></a>
+      <span>我的还款</span>
+      <a href="prepayment.html" class="fr dis-none preBtn">提前还款</a>
+    </header>
+		<section id="html-section">
+			
+		</section>
+	    <div class="btnDiv lendBtn" style="display:none">
+          <button id="subAuditSuccess">前去借款</button>
+          <dl><dd id="borrowTip"></dd></dl>
+        </div>
+		
+		<div id="dialogs">
+		  <div class="mask-content">
+		    <p class="msg"></p>
+		    <span class="repay">知道啦</span>
+		  </div>
+		</div>
+		
+		<script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+		<script src="../../js/lib/handlebars/handlebars.js"></script>
+		<script src="../../js/lib/handlebars/handleMethod.js"></script>
+		<script src="../../js/common/tools.js"></script>
+		<script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+		<script src="../../js/mine/repay.js"></script>
+		<script src="../../js/common/countdown.js"></script>
+		
+		<script id="content-template" type="text/x-handlebars-template">
+    <div class="tab-panel">
+      <ul class="tabUl">
+        <li class="active">
+          <a href="repay.html">未还账单</a>
+        </li>
+        <li>
+          <a href="repaied.html">已还账单</a>
+        </li>
+      </ul>
+      <div class="tab-content bg-content-white list-box">
+        {{#if (gt this.length '0')}}
+        <div>
+          <ul class="repayList">
+            {{#each this}}
+            <li>
+              <div class="max-width">
+                <div class="longWidth">
+                  <h6>第{{lendNum}}期</h6>
+                  <div>
+                    <span>应还金额</span>
+                    <em>￥{{formatmoney amount 2}}</em>
+                  </div>
+                  <div>
+                    <span>应还日期</span>
+                    <span>{{formatTime date}}</span>
+                  </div>
+                </div>
+                <div class="right-box">
+                <!--{{#if (eq state 'NO_LINE')}}
+                  <a href="javascript:;" class="disabled">未到期</a>
+                {{else if (eq state 'COM_RE')}}
+                  <a href="repayInfo.html?id={{id}}">正常还款</a>
+                {{else if (eq state 'BEFORE_RE')}}
+                  <small>已逾期两天</small>
+                  <a href="repayInfo.html?id={{id}}">提前还款</a>
+                {{else if (eq state 'OVER_NO')}}
+                  <a href="javascript:;" class="disabled">逾期未还</a>
+                {{else if (eq state 'OVER_YES')}}
+                  <a href="javascript:;" class="disabled">逾期已还</a>
+                {{/if}}-->
+                {{#if (lt diffDays -10)}}
+                 <a href="javascript:;" class="disabled">等待还款</a>
+                 {{else if (and (or (gt diffDays -10) (eq diffDays -10)) (or (lt diffDays 0) (eq diffDays 0)))}}
+                 <a href="repayInfo.html?id={{id}}">去还款</a>
+                 {{else if (gt diffDays 0)}}
+                  {{#if (gt overdueDay 0)}}
+                  <small>已逾期{{diffDays}}天</small>
+                  {{/if}}
+                  <a href="repayInfo.html?id={{id}}">去还款</a>
+                {{/if}}
+                </div>
+              </div>
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+        {{else}}
+        <section class="empty">
+          <img src="../../img/icon/Empty_States.png"/>
+          <h6>暂无记录</h6>
+        </section>
+        {{/if}}
+      </div>
+    </div>
+			
+		</script>
+		
+		
+	</body>
+</html>
+

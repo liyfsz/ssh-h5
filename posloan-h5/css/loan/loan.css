@@ -1,0 +1,30 @@
+.loan-enter-box{
+  margin-bottom:20px;
+}
+.infor table{
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  background: #FFFFFF;
+}
+.infor table thead th{
+  color: #666666;
+  font-size: 24px;
+  padding: 42px 0px 24px;
+  line-height: 1;
+  text-align: center;
+}
+.infor table tbody td{
+  color:#333333;
+  font-size: 36px;
+  line-height: 1;
+  padding-bottom: 34px;
+  font-weight: bold;
+}
+
+.formBox div.form-group.single{
+  margin-left:0px;
+  padding-left:30px;
+  background-color:#ffffff;
+  width:auto;
+}

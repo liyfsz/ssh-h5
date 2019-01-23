@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/personalInfor/personalInfor.css" />
+    <link rel="stylesheet" href="../../css/index.css"/>
+    <link rel="stylesheet" href="../../css/loan/loan.css"/>
+    
+    <script type="text/javascript" src="../../js/common/resetpage.js"></script>
+
+  </head>
+
+  <body>
+    <header>
+      <a href="audit.html" class="goBack selfHref"></a>
+    	  <span>立即借款</span>
+    </header>
+    <section id="html-section">
+    
+    </section>
+    
+    <!--隐藏的类数据字典-->
+    <div class="modalBox">
+      <div class="maskBg"></div>
+      <div class="modalCon modalCon1" data-link="relate1">
+        <ul class="termUl">
+          <li data-code="6" data-text="6个月">6个月</li>
+          <li data-code="12" data-text="12个月">12个月</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!--弹出框1-->
+    <div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/common/mask.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/loan/loan.js"></script>
+    <!--handlebars取数据-->
+    <script id="content-template" type="text/x-handlebars-template">
+     <input type="hidden" value="{{verifyQuota}}" id="verifyQuota" />
+    <form>
+      <div class="formBox">
+        <div class="loan-enter-box bg-content-white">
+          <label>借款金额</label>
+          <div class="input-box">
+            <input type="hidden" value="{{lendRateRes}}" name="lendRate" id="lendRate"/>
+            <input type="hidden" value="{{userNo}}" name="userNo"/>
+            
+            <input placeholder="请输入您的期望借款金额" type="text" name="verifyQuota" value="{{formatmoney verifyQuota 2}}" disabled="" />
+          </div>
+        </div>
+        <div class="form-group single">
+          <label>借款周期:</label>
+          <span id="lendPeriodTxt" class="togRelate relate1" data-con="modalCon1">6个月</span>
+          <input type="hidden" name="lendPeriod" value="6" class="dicCode" id="lendPeriod"/>
+        </div>
+        <div class="">
+          <div class="infor">
+            <table>
+              <thead>
+                <tr>
+                  <th>月利率</th>
+                  <th></th>
+                  <th>每月还息</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="lendRateTxt">
+                    {{lendRatePer}}
+                  </td>
+                  <td>
+                  </td>
+                  <td id="monthInterest">
+                    {{monthInterest}}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="check-box-row" style="margin-left:100px;">
+      <input type="checkbox" id="agree" name="isPass" value="1"/>
+      <label for="agree">
+           我已阅读并同意
+            <a href="perLoanConst.html" class="main-color rxjk" hidden>《个人借款合同》</a>
+            <a href="xhPerLoanConst.html" class="main-color xhjk" hidden>《个人借款合同》</a>
+            <a href="entrustmentLetter.html " class="main-color rxdk" hidden>《委托扣款授权书》</a>
+    </div>
+    <div class="btnDiv">
+      <button id="loan" disabled="true">立即借款</button>
+    </div>
+    </script>
+  </body>
+</html>

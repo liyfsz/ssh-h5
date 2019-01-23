@@ -1,0 +1,70 @@
+.partUp{
+	background: -webkit-linear-gradient(#ff9d90,#ffa98a ); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#ff9d90,#ffa98a); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#ff9d90, #ffa98a); /* Firefox 3.6 - 15 */
+  background: linear-gradient(#ff9d90,#ffa98a); /* 标准的语法 */
+}
+header{
+	background: rgba(255,255,255,0);
+}
+header a.goBack{
+	background: url(../../img/direct/back_white.png) center no-repeat;
+}
+
+header span{
+	color: #fff;
+}
+.cont-box{
+	margin: 10px 24px 5px;
+	background: #FFFFFF;
+	border-radius: 15px;
+}
+.cont-box .warns{
+	color: #999999;
+	font-size: 27px;
+	padding: 20px;
+	line-height: 40px;
+	letter-spacing: 1.6px;
+	background: #fbfbfb;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	
+}
+
+.codeImg-box{
+	text-align: center;
+	
+}
+.codeImg-box h6{
+	padding: 20px 0px;
+	margin-top: 15px;
+}
+.codeImg-box h6 img{
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px 15px;
+}
+
+.transRepay{
+	text-align: center;
+	font-size: 26px;
+	line-height: 45px;
+	padding-top: 40px;
+}
+
+
+.account-box{
+  background: #FFFFFF;
+  margin: 0px 20px 25px;
+  padding-bottom: 30px;
+}
+
+.formDetail div.form-group > label{
+	width: auto;
+	margin-left: 40px;
+}
+.formDetail div.form-group > div{
+	color: #999999;
+	text-align: left;
+	margin-left: 15px;
+}

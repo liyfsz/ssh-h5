@@ -1,0 +1,25 @@
+.currPage{
+  padding-bottom: 30px;
+}
+.check-box-row{
+  font-size: 20px;
+  color: #999999;
+  margin-left: 20px;
+}
+.check-box-row input[type=checkbox]{
+  display: none;
+}
+.check-box-row input[type=checkbox]+label{
+  display: block;
+  -webkit-appearance: none;
+  width: auto;
+  background: url(../../img/btn/border_normal_index.png) center left no-repeat;
+  padding-left: 42px;
+}
+.check-box-row input[type=checkbox]:checked+label{
+  background: url(../../img/btn/border_selected_index.png) center left no-repeat;
+}
+
+.check-box-row label a{
+  color: #333333;
+}

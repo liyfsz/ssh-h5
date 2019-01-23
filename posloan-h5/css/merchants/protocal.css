@@ -1,0 +1,47 @@
+html{
+	background: #FFFFFF;
+	
+}
+body > div{
+	padding: 20px 15px;
+	padding-bottom: 30px;
+	height: auto;
+}
+
+header{
+  position: fixed;
+  left:0px;
+  top:0px;
+  width:100%;
+  line-height: 40px;
+  height: 40px;
+  padding: 0px 10px;
+  background-color: #FFFFFF;
+  vertical-align: middle;
+  font-size: 0px;
+  font-weight:bold;
+}
+header a{
+	color: #333333;
+	position: relative;
+	z-index: 2;
+	font-size: 12px;
+}
+header a.goBack{
+  display: inline-block;
+  height:40%;
+  width: 15px;
+  background: url("../../img/direct/back_black.png") no-repeat;
+  background-position: center;
+  vertical-align: middle;
+}
+header span{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}

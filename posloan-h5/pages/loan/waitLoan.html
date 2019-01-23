@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../../css/common/reset.css" />
+    <link rel="stylesheet" href="../../css/common/app.css" />
+    <link rel="stylesheet" href="../../css/common/form.css" />
+    <link rel="stylesheet" href="../../css/mine/borrow.css"/>
+    <link rel="stylesheet" href="../../css/loan/audit.css"/>
+    
+    
+    <script type="text/javascript" src="../../js/common/resetpage.js"></script>
+
+  </head>
+
+  <body>
+   <div class="container">
+      <header>
+        <a href="javascript:void(0)" class="goBack"></a>
+        <span>首页</span>
+      </header>
+    <section id="html-section"></section>
+   </div>
+   <footer>
+     <div class="service">
+       <div class="serviceTips">客服工作时间：工作日9:00-17:30</div>
+       <label>人工客服电话: <a href="tel:010-82205410" class="disableHref">010-82205410</a> / <a href="tel:400-668-6689" class="disableHref">400-668-6689</a></label>
+     </div>
+     <div class="footer">
+       <a href="javascript:void(0);" class="a1 current" id="goIndex">首页</a>
+       <a href="../mine/index.html" class="a2">我的</a>
+     </div>
+   </footer>
+    
+    <!--弹出框1-->
+    <div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    <script src="../../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/common/tools.js"></script>
+    <script src="../../js/lib/handlebars/handlebars.js"></script>
+    <script src="../../js/lib/handlebars/handleMethod.js"></script>
+    <script type="text/javascript" src="../../js/lib/md5des.min.js"></script>
+    <script src="../../js/loan/waitLoan.js"></script>
+    <script id="content-template" type="text/x-handlebars-template">
+      <div class="partUp">
+        <h6>借款金额(元)</h6>
+        <h2>{{formatmoney verifyQuota 2}}</h2>
+      </div>
+      <div class="">
+        <div class="infor">
+          <table>
+            <thead>
+              <tr>
+                <th>月利率</th>
+                <th>借款周期</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  {{formatPercent lendRate}}
+                </td>
+                <td>
+                  {{lendPeriod}}个月
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="btnDiv">
+        <button id="waitLoan" disabled="disabled">等待放款</button>
+      </div>
+    
+    </script>
+  </body>
+
+</html>

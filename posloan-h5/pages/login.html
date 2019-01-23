@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>商户惠</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    <meta name="keywords" content="" id="keywords">
+    <meta name="description" content="" id="description">
+
+    <!-- debug used  after cut down! -->
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <!-- 网页作者 -->
+    <meta name="author" content="name, email@gmail.com">
+    <!-- 搜索引擎抓取 -->
+    <meta name="robots" content="index,follow">
+
+    <meta name="format-detection" content="telphone=no, email=no">
+
+    <!-- ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="标题">
+
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!--     去掉默认显示手机号蓝色 -->
+    <link rel="stylesheet" href="../css/common/reset.css" />
+    <link rel="stylesheet" href="../css/common/app.css" />
+    <link rel="stylesheet" href="../css/login.css"/>
+    <script type="text/javascript" src="../js/common/resetpage.js"></script>
+
+  </head>
+
+  <body>
+  	<header style="background: #FFFFFF;">
+      <a href="javascript:void(0)" class="goBack" style="background-image: url(../img/direct/back_black.png);"></a>
+      <span style="color: #000;">商户惠</span>
+    </header>
+    <section class="bodyBg">
+    	<img src="../img/bg/home02_bg.png" />
+    	  <form id="loginForm">
+    	    <div class="mobileDiv">
+    	      <input type="tel" name="mobile" placeholder="请输入手机号码" id="mobile"/>
+    	    </div>
+    	    <div class="codeDiv">
+            <input type="number" name="code" placeholder="请输入短信验证码" id="smsCode"/>
+            <button type="button" id="getCode">获取验证码</button>
+        </div>
+        
+    	  </form>
+      <div class="operate-box">
+      	<button id="subForm">快速登录</button>
+      	<div class="check-box-row">
+      		<input type="checkbox" id="agree"/>
+      		<label for="agree">
+      			我已阅读并同意
+      			<a href="loanService.html">《用户服务协议及授权协议》</a>
+      		</label>
+      	</div>
+      </div>
+    </section>
+    
+    <!--弹出框1-->
+		<div id="dialogs">
+      <div class="mask-content">
+        <p class="msg"></p>
+        <span class="repay">知道啦</span>
+      </div>
+    </div>
+    <script src="../js/lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../js/common/tools.js"></script>
+    <script src="../js/common/validate.js"></script>
+    <script type="text/javascript" src="../js/lib/md5des.min.js"></script>
+    <script src="../js/login.js"></script>
+  </body>
+</html>
